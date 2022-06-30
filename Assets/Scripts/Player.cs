@@ -24,9 +24,11 @@ public class Player : MonoBehaviour
     private float moveSpeed = 2f;
     public Transform StackRoot;
     public Transform StackParent;
-private Collider col;
-public Transform CharacterTrans;
-private Vector3 stackDirection;
+    private Collider col;
+    public Transform CharacterTrans;
+    private Vector3 stackDirection;
+    public Stack<GameObject> StackList;
+    public Animator anim;
 
     void Awake()
     {
@@ -44,8 +46,23 @@ private Vector3 stackDirection;
         col = GetComponent<Collider>();
 
         stackDirection = StackRoot.forward;
-    }
 
+        StackRoot.position = transform.position;
+        StackParent.position = StackRoot.position;
+        StackParent.parent = StackRoot;
+
+        StartCoroutine(SlowSetAnimValue());
+
+        StackList = new Stack<GameObject>();
+    }
+    void FixedUpdate()
+    {
+        transform.position = Vector3.MoveTowards(transform.position, transform.position + moveDir, moveSpeed * Time.deltaTime);
+    }
+    void OnDestroy()
+    {
+        InputManager.OnInputUpdate -= InputManagerOnInputUpdate;
+    }
     private void InputManagerOnInputUpdate(InputManager.InputType type)
     {
         if (type == InputManager.InputType.Up)
@@ -77,12 +94,12 @@ private Vector3 stackDirection;
         }
     }
 
-    void FixedUpdate()
+    IEnumerator SlowSetAnimValue()
     {
-        transform.position = Vector3.MoveTowards(transform.position, transform.position + moveDir, moveSpeed * Time.deltaTime);
-    }
-    void OnDestroy()
-    {
-        InputManager.OnInputUpdate -= InputManagerOnInputUpdate;
+        while (1 > 0)
+        {
+            for (int i = 0; i < 4; i++) yield return null;
+            anim.SetInteger("renwu", 0);
+        }
     }
 }

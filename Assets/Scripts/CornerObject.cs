@@ -16,7 +16,7 @@ public class CornerObject : MonoBehaviour
 
             {
                 player.MoveDir = Vector3.zero;
-
+                player.transform.position = transform.position;
             }
 
             InputManager.Instance.UpdateDirectionLock(isUpLock, isDownLock, isLeftLock, isRightLock);

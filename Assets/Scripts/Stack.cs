@@ -27,23 +27,26 @@ public class Stack : MonoBehaviour
             col.enabled = false;
             Player player = other.GetComponent<Player>();
 
-            if (player.StackParent == null)
-            {
-                player.StackParent = transform;
-                player.StackRoot.position = transform.position;
-                player.StackParent.position = player.StackRoot.position;
-                player.StackParent.parent = player.StackRoot;
-            }
-            else
-            {
-                player.StackParent.position += Vector3.up * stackHeight;
-                player.CharacterTrans.position += Vector3.up * stackHeight;
-                transform.position = player.StackRoot.position;
-                transform.parent = player.StackParent;
-            }
+            // if (player.StackParent == null)
+            // {
+            //     player.StackParent = transform;
+            //     player.StackRoot.position = transform.position;
+            //     player.StackParent.position = player.StackRoot.position;
+            //     player.StackParent.parent = player.StackRoot;
+            // }
+            // else
+            player.StackList.Push(this.gameObject);
+            player.StackParent.position += Vector3.up * stackHeight;
+            player.CharacterTrans.position += Vector3.up * stackHeight;
+            transform.position = player.StackRoot.position;
+            transform.parent = player.StackParent;
+
+            player.anim.SetInteger("renwu", 1);
+
         }
 
     }
+
 }
 
 

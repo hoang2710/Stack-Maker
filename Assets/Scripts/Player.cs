@@ -29,10 +29,12 @@ public class Player : MonoBehaviour
     private Vector3 stackDirection;
     public Stack<GameObject> StackList;
     public Animator anim;
+    private IEnumerator coroutine;
 
     void Awake()
     {
         InputManager.OnInputUpdate += InputManagerOnInputUpdate;
+        GameManager.OnGameStateChanged += GameManagerOnGameStateChanged;
     }
 
     void Start()
@@ -51,7 +53,8 @@ public class Player : MonoBehaviour
         StackParent.position = StackRoot.position;
         StackParent.parent = StackRoot;
 
-        StartCoroutine(SlowSetAnimValue());
+        coroutine = SlowSetAnimValue();
+        StartCoroutine(coroutine);
 
         StackList = new Stack<GameObject>();
     }
@@ -62,6 +65,7 @@ public class Player : MonoBehaviour
     void OnDestroy()
     {
         InputManager.OnInputUpdate -= InputManagerOnInputUpdate;
+        GameManager.OnGameStateChanged -= GameManagerOnGameStateChanged;
     }
     private void InputManagerOnInputUpdate(InputManager.InputType type)
     {
@@ -94,9 +98,16 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void GameManagerOnGameStateChanged(GameManager.GameState state){
+        if(state == GameManager.GameState.EndLevel){
+            StopCoroutine(coroutine);
+            anim.SetInteger("renwu", 2);
+        }
+    }
+
     IEnumerator SlowSetAnimValue()
     {
-        while (1 > 0)
+        while (true)
         {
             for (int i = 0; i < 4; i++) yield return null;
             anim.SetInteger("renwu", 0);

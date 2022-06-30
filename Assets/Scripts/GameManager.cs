@@ -51,27 +51,27 @@ public class GameManager : MonoBehaviour
 
     public void OnGameStateLoading()
     {
-
+        Debug.Log("GameStateLoading");
     }
     public void OnGameStatePlay()
     {
-
+        Debug.Log("GameStatePlay");
     }
     public void OnGameStateEndLevel()
     {
-
+        Debug.Log("GameStateEndLevel");
     }
     public void OnGameStateRestartLevel()
     {
-
+        Debug.Log("GameStateRestartLevel");
     }
     public void OnGameStatePreEndLevel()
     {
-
+        Debug.Log("GameStatePreEndLevel");
     }
     public void OnGameStateStartGame()
     {
-
+        Debug.Log("GameStateStartGame");
     }
 
     public enum GameState

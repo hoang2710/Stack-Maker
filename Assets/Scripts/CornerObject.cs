@@ -21,6 +21,10 @@ public class CornerObject : MonoBehaviour
 
             InputManager.Instance.UpdateDirectionLock(isUpLock, isDownLock, isLeftLock, isRightLock);
 
+            if(isUpLock&&isDownLock&&isLeftLock&&isRightLock){
+                GameManager.Instance.ChangeGameState(GameManager.GameState.EndLevel);
+            }
+
         }
     }
 }

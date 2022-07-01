@@ -13,6 +13,7 @@ public class InputManager : MonoBehaviour
     private bool isDownLock = false;
     private bool isLeftLock = false;
     private bool isRightLock = false;
+    private bool isInputLock = false;
 
 
     public static InputManager Instance { get; private set; }
@@ -28,6 +29,8 @@ public class InputManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        GameManager.OnGameStateChanged += GameManagerOnGameStateChanged;
     }
 
     void Update()
@@ -46,29 +49,39 @@ public class InputManager : MonoBehaviour
         if (isSwipe)
         {
             isSwipe = false;
-            Vector2 dir = (mouseUpPos - mouseDownPos).normalized;
-            if (dir.x > swipeDetectTriggerLine && !isRightLock)
+            if (!isInputLock)
             {
-                TriggerInput(InputType.Right);
-            }
-            else
-            if (dir.x < -swipeDetectTriggerLine && !isLeftLock)
-            {
-                TriggerInput(InputType.Left);
-            }
-            else
-            if (dir.y > swipeDetectTriggerLine && !isUpLock)
-            {
-                TriggerInput(InputType.Up);
-            }
-            else
-            if (dir.y < -swipeDetectTriggerLine && !isDownLock)
-            {
-                TriggerInput(InputType.Down);
+                Vector2 dir = (mouseUpPos - mouseDownPos).normalized;
+                if (dir.x > swipeDetectTriggerLine && !isRightLock)
+                {
+                    TriggerInput(InputType.Right);
+                }
+                else
+                if (dir.x < -swipeDetectTriggerLine && !isLeftLock)
+                {
+                    TriggerInput(InputType.Left);
+                }
+                else
+                if (dir.y > swipeDetectTriggerLine && !isUpLock)
+                {
+                    TriggerInput(InputType.Up);
+                }
+                else
+                if (dir.y < -swipeDetectTriggerLine && !isDownLock)
+                {
+                    TriggerInput(InputType.Down);
+                }
             }
         }
     }
 
+    private void GameManagerOnGameStateChanged(GameManager.GameState state)
+    {
+        if (state == GameManager.GameState.Play)
+        {
+            isInputLock = false;
+        }
+    }
 
     public void TriggerInput(InputType input)
     {
@@ -81,6 +94,11 @@ public class InputManager : MonoBehaviour
         isDownLock = down;
         isLeftLock = left;
         isRightLock = right;
+    }
+
+    public void UpdateInputLock(bool val)
+    {
+        isInputLock = val;
     }
 
     public enum InputType

@@ -21,7 +21,9 @@ public class Player : MonoBehaviour
         }
     }
     [SerializeField]
-    private float moveSpeed = 2f;
+    private float moveSpeed = 20f;
+    [SerializeField]
+    private float moveSpeedPreEnd = 12f;
     public Transform StackRoot;
     public Transform StackParent;
     private Collider col;
@@ -98,11 +100,19 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void GameManagerOnGameStateChanged(GameManager.GameState state){
-        if(state == GameManager.GameState.EndLevel){
+    private void GameManagerOnGameStateChanged(GameManager.GameState state)
+    {
+        if (state == GameManager.GameState.EndLevel)
+        {
             StopCoroutine(coroutine);
             anim.SetInteger("renwu", 2);
         }
+        
+        if (state == GameManager.GameState.PreEndLevel)
+        {
+            moveSpeed = moveSpeedPreEnd;
+        }
+
     }
 
     IEnumerator SlowSetAnimValue()

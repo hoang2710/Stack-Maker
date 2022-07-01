@@ -95,6 +95,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a4ba825be2dce0489260a3fa33eeb79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isUpLock: 0
+  isDownLock: 0
+  isLeftLock: 0
+  isRightLock: 0
 --- !u!65 &7828908118775497751
 BoxCollider:
   m_ObjectHideFlags: 0

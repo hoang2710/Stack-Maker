@@ -109,7 +109,7 @@ public class Player : MonoBehaviour
     {
         while (true)
         {
-            for (int i = 0; i < 4; i++) yield return null;
+            for (int i = 0; i < 2; i++) yield return null;
             anim.SetInteger("renwu", 0);
         }
     }

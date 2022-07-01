@@ -20,6 +20,7 @@ public class StackMinus : MonoBehaviour
             GoldenPlate.SetActive(true);
 
             player.anim.SetInteger("renwu", 1);
+            Destroy(this);
         }
     }
 }

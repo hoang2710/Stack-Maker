@@ -18,6 +18,10 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        Screen.SetResolution(1080, 1920, false);
+        Debug.Log(Screen.currentResolution.width + "   " + Screen.currentResolution.height);
+        Screen.autorotateToPortrait = true;
     }
 
     public void ChangeGameState(GameState state)
@@ -41,6 +45,9 @@ public class GameManager : MonoBehaviour
                 break;
             case GameState.StartGame:
                 OnGameStateStartGame();
+                break;
+            case GameState.ResultPhase:
+                OnGameStateResultPhase();
                 break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(state), state, null);
@@ -73,6 +80,10 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("GameStateStartGame");
     }
+    public void OnGameStateResultPhase()
+    {
+        Debug.Log("GameStateResultPhase");
+    }
 
     public enum GameState
     {
@@ -81,6 +92,7 @@ public class GameManager : MonoBehaviour
         EndLevel,
         RestartLevel,
         PreEndLevel,
-        StartGame
+        StartGame,
+        ResultPhase
     }
 }

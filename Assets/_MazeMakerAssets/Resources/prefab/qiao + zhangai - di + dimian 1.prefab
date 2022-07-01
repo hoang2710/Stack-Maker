@@ -401,7 +401,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d4b138118891214a9fffc6a46c9ca76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stackHeight: 0.45
+  stackHeight: 0.3
   GoldenPlate: {fileID: 5431014520910452894}
 --- !u!65 &5789873014668425750
 BoxCollider:

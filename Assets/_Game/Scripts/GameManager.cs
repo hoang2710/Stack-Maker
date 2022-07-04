@@ -23,7 +23,10 @@ public class GameManager : MonoBehaviour
         Debug.Log(Screen.currentResolution.width + "   " + Screen.currentResolution.height);
         Screen.autorotateToPortrait = true;
     }
-
+    void Start()
+    {
+        ChangeGameState(GameState.Play);
+    }
     public void ChangeGameState(GameState state)
     {
         switch (state)
@@ -67,6 +70,7 @@ public class GameManager : MonoBehaviour
     public void OnGameStateEndLevel()
     {
         Debug.Log("GameStateEndLevel");
+        StartCoroutine(DelayStartResultPhase());
     }
     public void OnGameStateRestartLevel()
     {
@@ -75,6 +79,7 @@ public class GameManager : MonoBehaviour
     public void OnGameStatePreEndLevel()
     {
         Debug.Log("GameStatePreEndLevel");
+
     }
     public void OnGameStateStartGame()
     {
@@ -94,5 +99,11 @@ public class GameManager : MonoBehaviour
         PreEndLevel,
         StartGame,
         ResultPhase
+    }
+
+    IEnumerator DelayStartResultPhase()
+    {
+        yield return new WaitForSeconds(4f);
+        GameManager.Instance.ChangeGameState(GameManager.GameState.ResultPhase);
     }
 }

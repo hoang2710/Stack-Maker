@@ -32,7 +32,19 @@ public class Player : MonoBehaviour
     public Stack<GameObject> StackList = new Stack<GameObject>();
     public Animator Anim;
     private IEnumerator coroutine;
-    private const string ANIM = "renwu";
+    private int gold = 0;
+    public int Gold
+    {
+        get
+        {
+            return gold;
+        }
+        set
+        {
+            gold = value;
+            UIManager.Instance.UpdatePlayerGoldUI(value);
+        }
+    }
 
     void Start()
     {
@@ -47,6 +59,8 @@ public class Player : MonoBehaviour
 
         coroutine = SlowSetAnimValue();
         StartCoroutine(coroutine);
+
+        UIManager.Instance.UpdatePlayerGoldUI(gold);
     }
     void FixedUpdate()
     {
@@ -63,56 +77,61 @@ public class Player : MonoBehaviour
     }
     private void InputManagerOnInputUpdate(InputManager.InputType type)
     {
-        if (type == InputManager.InputType.Up)
+        switch (type)
         {
-            moveDir = upDir;
-            PlayerTrans.rotation = Quaternion.LookRotation(upDir);
-            StackRoot.rotation = Quaternion.LookRotation(stackDirection);
-        }
-        else
-        if (type == InputManager.InputType.Down)
-        {
-            moveDir = downDir;
-            PlayerTrans.rotation = Quaternion.LookRotation(downDir);
-            StackRoot.rotation = Quaternion.LookRotation(stackDirection);
-        }
-        else
-        if (type == InputManager.InputType.Left)
-        {
-            moveDir = leftDir;
-            PlayerTrans.rotation = Quaternion.LookRotation(leftDir);
-            StackRoot.rotation = Quaternion.LookRotation(stackDirection);
-        }
-        else
-        if (type == InputManager.InputType.Right)
-        {
-            moveDir = rightDir;
-            PlayerTrans.rotation = Quaternion.LookRotation(rightDir);
-            StackRoot.rotation = Quaternion.LookRotation(stackDirection);
+            case InputManager.InputType.Up:
+
+                moveDir = upDir;
+                PlayerTrans.rotation = Quaternion.LookRotation(upDir);
+                StackRoot.rotation = Quaternion.LookRotation(stackDirection);
+                break;
+            case InputManager.InputType.Down:
+                moveDir = downDir;
+                PlayerTrans.rotation = Quaternion.LookRotation(downDir);
+                StackRoot.rotation = Quaternion.LookRotation(stackDirection);
+                break;
+            case InputManager.InputType.Left:
+                moveDir = leftDir;
+                PlayerTrans.rotation = Quaternion.LookRotation(leftDir);
+                StackRoot.rotation = Quaternion.LookRotation(stackDirection);
+                break;
+            case InputManager.InputType.Right:
+                moveDir = rightDir;
+                PlayerTrans.rotation = Quaternion.LookRotation(rightDir);
+                StackRoot.rotation = Quaternion.LookRotation(stackDirection);
+                break;
+            default:
+                break;
         }
     }
 
     private void GameManagerOnGameStateChanged(GameManager.GameState state)
     {
-        if (state == GameManager.GameState.EndLevel)
+        switch (state)
         {
-            StopCoroutine(coroutine);
-            Anim.SetInteger(ANIM, 2);
+            case GameManager.GameState.EndLevel:
+                StopCoroutine(coroutine);
+                Anim.SetInteger(ConstValue.PLAYER_ANIM, 2);
+                break;
+            case GameManager.GameState.PreEndLevel:
+                moveSpeed = moveSpeedPreEnd;
+                break;
+            case GameManager.GameState.ResultPhase:
+                int goldBonus = LevelManager.Instance.GetGoldBonus();
+                gold += goldBonus;
+                Debug.Log(gold);
+                break;
+            default:
+                break;
         }
-
-        if (state == GameManager.GameState.PreEndLevel)
-        {
-            moveSpeed = moveSpeedPreEnd;
-        }
-
     }
 
     IEnumerator SlowSetAnimValue()
     {
         while (true)
         {
-            for (int i = 0; i < 2; i++) yield return null;
-            Anim.SetInteger(ANIM, 0);
+            for (int i = 0; i < 3; i++) yield return null;
+            Anim.SetInteger(ConstValue.PLAYER_ANIM, 0);
         }
     }
 }

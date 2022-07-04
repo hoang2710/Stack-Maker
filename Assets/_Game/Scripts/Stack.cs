@@ -8,7 +8,6 @@ public class Stack : MonoBehaviour
     private float stackHeight = 0.45f;
     public Collider Col;
     public Transform StackTrans;
-    private const string ANIM = "renwu";
     private void OnTriggerEnter(Collider other)
     {
 
@@ -25,14 +24,17 @@ public class Stack : MonoBehaviour
             //     player.StackParent.parent = player.StackRoot;
             // }
             // else
-            player.StackList.Push(this.gameObject);
-            player.StackParent.position += Vector3.up * stackHeight;
-            player.CharacterTrans.position += Vector3.up * stackHeight;
-            StackTrans.position = player.StackRoot.position;
-            StackTrans.parent = player.StackParent;
+            if (player != null)
+            {
+                player.StackList.Push(this.gameObject);
+                player.StackParent.position += Vector3.up * stackHeight;
+                player.CharacterTrans.position += Vector3.up * stackHeight;
+                StackTrans.position = player.StackRoot.position;
+                StackTrans.parent = player.StackParent;
 
-            player.Anim.SetInteger(ANIM, 1);
-            
+                player.Anim.SetInteger(ConstValue.PLAYER_ANIM, 1);
+            }
+
         }
 
     }

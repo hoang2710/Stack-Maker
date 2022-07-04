@@ -9,6 +9,8 @@ public class InputManager : MonoBehaviour
     private Vector2 mouseUpPos;
     private bool isSwipe = false;
     private float swipeDetectTriggerLine = 0.6f;  //cos(45) ~ 1
+    [SerializeField]
+    private float sensitiveThreshold = 150f;
     private bool isUpLock = false;
     private bool isDownLock = false;
     private bool isLeftLock = false;
@@ -51,25 +53,29 @@ public class InputManager : MonoBehaviour
             isSwipe = false;
             if (!isInputLock)
             {
-                Vector2 dir = (mouseUpPos - mouseDownPos).normalized;
-                if (dir.x > swipeDetectTriggerLine && !isRightLock)
+                Debug.Log((mouseUpPos - mouseDownPos).magnitude + "   " + mouseDownPos + "   " + mouseUpPos +"  " + (mouseUpPos - mouseDownPos));
+                if ((mouseUpPos - mouseDownPos).magnitude > sensitiveThreshold)
                 {
-                    TriggerInput(InputType.Right);
-                }
-                else
-                if (dir.x < -swipeDetectTriggerLine && !isLeftLock)
-                {
-                    TriggerInput(InputType.Left);
-                }
-                else
-                if (dir.y > swipeDetectTriggerLine && !isUpLock)
-                {
-                    TriggerInput(InputType.Up);
-                }
-                else
-                if (dir.y < -swipeDetectTriggerLine && !isDownLock)
-                {
-                    TriggerInput(InputType.Down);
+                    Vector2 dir = (mouseUpPos - mouseDownPos).normalized;
+                    if (dir.x > swipeDetectTriggerLine && !isRightLock)
+                    {
+                        TriggerInput(InputType.Right);
+                    }
+                    else
+                    if (dir.x < -swipeDetectTriggerLine && !isLeftLock)
+                    {
+                        TriggerInput(InputType.Left);
+                    }
+                    else
+                    if (dir.y > swipeDetectTriggerLine && !isUpLock)
+                    {
+                        TriggerInput(InputType.Up);
+                    }
+                    else
+                    if (dir.y < -swipeDetectTriggerLine && !isDownLock)
+                    {
+                        TriggerInput(InputType.Down);
+                    }
                 }
             }
         }

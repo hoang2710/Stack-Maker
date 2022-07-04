@@ -227,3 +227,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stackHeight: 0.3
+  Col: {fileID: 4182792775485902422}
+  StackTrans: {fileID: 4001877582132777}

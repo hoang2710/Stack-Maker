@@ -6,25 +6,15 @@ public class Stack : MonoBehaviour
 {
     [SerializeField]
     private float stackHeight = 0.45f;
-    private Collider col;
-    // Start is called before the first frame update
-    void Start()
-    {
-        col = GetComponent<Collider>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
+    public Collider Col;
+    public Transform StackTrans;
+    private const string ANIM = "renwu";
     private void OnTriggerEnter(Collider other)
     {
 
         if (other.CompareTag("Player"))
         {
-            col.enabled = false;
+            Col.enabled = false;
             Player player = other.GetComponent<Player>();
 
             // if (player.StackParent == null)
@@ -38,11 +28,11 @@ public class Stack : MonoBehaviour
             player.StackList.Push(this.gameObject);
             player.StackParent.position += Vector3.up * stackHeight;
             player.CharacterTrans.position += Vector3.up * stackHeight;
-            transform.position = player.StackRoot.position;
-            transform.parent = player.StackParent;
+            StackTrans.position = player.StackRoot.position;
+            StackTrans.parent = player.StackParent;
 
-            player.anim.SetInteger("renwu", 1);
-
+            player.Anim.SetInteger(ANIM, 1);
+            
         }
 
     }

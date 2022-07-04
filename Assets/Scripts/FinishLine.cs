@@ -5,7 +5,7 @@ using UnityEngine;
 public class FinishLine : MonoBehaviour
 {
     public GameObject FireCracker;
-    void Awake()
+    void Start()
     {
         GameManager.OnGameStateChanged += GameManagerOnGameStateChanged;
     }

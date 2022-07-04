@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    private Vector3 upDir;
-    private Vector3 downDir;
-    private Vector3 leftDir;
-    private Vector3 rightDir;
-    private Vector3 moveDir;
+    private Vector3 upDir = Vector3.forward;
+    private Vector3 downDir = Vector3.back;
+    private Vector3 leftDir = Vector3.left;
+    private Vector3 rightDir = Vector3.right;
+    private Vector3 moveDir = Vector3.zero;
     public Vector3 MoveDir
     {
         get
@@ -24,30 +24,20 @@ public class Player : MonoBehaviour
     private float moveSpeed = 20f;
     [SerializeField]
     private float moveSpeedPreEnd = 12f;
+    public Transform PlayerTrans;
     public Transform StackRoot;
     public Transform StackParent;
-    private Collider col;
     public Transform CharacterTrans;
     private Vector3 stackDirection;
-    public Stack<GameObject> StackList;
-    public Animator anim;
+    public Stack<GameObject> StackList = new Stack<GameObject>();
+    public Animator Anim;
     private IEnumerator coroutine;
-
-    void Awake()
-    {
-        InputManager.OnInputUpdate += InputManagerOnInputUpdate;
-        GameManager.OnGameStateChanged += GameManagerOnGameStateChanged;
-    }
+    private const string ANIM = "renwu";
 
     void Start()
     {
-        upDir = new Vector3(0, 0, 1);
-        downDir = new Vector3(0, 0, -1);
-        leftDir = new Vector3(-1, 0, 0);
-        rightDir = new Vector3(1, 0, 0);
-        moveDir = new Vector3(0, 0, 0);
-
-        col = GetComponent<Collider>();
+        InputManager.OnInputUpdate += InputManagerOnInputUpdate;
+        GameManager.OnGameStateChanged += GameManagerOnGameStateChanged;
 
         stackDirection = StackRoot.forward;
 
@@ -57,45 +47,47 @@ public class Player : MonoBehaviour
 
         coroutine = SlowSetAnimValue();
         StartCoroutine(coroutine);
-
-        StackList = new Stack<GameObject>();
     }
     void FixedUpdate()
     {
-        transform.position = Vector3.MoveTowards(transform.position, transform.position + moveDir, moveSpeed * Time.deltaTime);
+        MovePlayer();
     }
     void OnDestroy()
     {
         InputManager.OnInputUpdate -= InputManagerOnInputUpdate;
         GameManager.OnGameStateChanged -= GameManagerOnGameStateChanged;
     }
+    private void MovePlayer()
+    {
+        PlayerTrans.position = Vector3.MoveTowards(PlayerTrans.position, PlayerTrans.position + moveDir, moveSpeed * Time.deltaTime);
+    }
     private void InputManagerOnInputUpdate(InputManager.InputType type)
     {
         if (type == InputManager.InputType.Up)
         {
             moveDir = upDir;
-            transform.rotation = Quaternion.LookRotation(upDir);
+            PlayerTrans.rotation = Quaternion.LookRotation(upDir);
             StackRoot.rotation = Quaternion.LookRotation(stackDirection);
         }
         else
         if (type == InputManager.InputType.Down)
         {
             moveDir = downDir;
-            transform.rotation = Quaternion.LookRotation(downDir);
+            PlayerTrans.rotation = Quaternion.LookRotation(downDir);
             StackRoot.rotation = Quaternion.LookRotation(stackDirection);
         }
         else
         if (type == InputManager.InputType.Left)
         {
             moveDir = leftDir;
-            transform.rotation = Quaternion.LookRotation(leftDir);
+            PlayerTrans.rotation = Quaternion.LookRotation(leftDir);
             StackRoot.rotation = Quaternion.LookRotation(stackDirection);
         }
         else
         if (type == InputManager.InputType.Right)
         {
             moveDir = rightDir;
-            transform.rotation = Quaternion.LookRotation(rightDir);
+            PlayerTrans.rotation = Quaternion.LookRotation(rightDir);
             StackRoot.rotation = Quaternion.LookRotation(stackDirection);
         }
     }
@@ -105,9 +97,9 @@ public class Player : MonoBehaviour
         if (state == GameManager.GameState.EndLevel)
         {
             StopCoroutine(coroutine);
-            anim.SetInteger("renwu", 2);
+            Anim.SetInteger(ANIM, 2);
         }
-        
+
         if (state == GameManager.GameState.PreEndLevel)
         {
             moveSpeed = moveSpeedPreEnd;
@@ -120,7 +112,7 @@ public class Player : MonoBehaviour
         while (true)
         {
             for (int i = 0; i < 2; i++) yield return null;
-            anim.SetInteger("renwu", 0);
+            Anim.SetInteger(ANIM, 0);
         }
     }
 }

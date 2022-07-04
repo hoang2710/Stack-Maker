@@ -21,11 +21,11 @@ public class CameraManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        GameManager.OnGameStateChanged += GameManagerOnGameStateChanged;
+
     }
     void Start()
     {
-
+        GameManager.OnGameStateChanged += GameManagerOnGameStateChanged;
     }
     private void OnDestroy()
     {

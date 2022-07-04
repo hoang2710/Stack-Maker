@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.unity.2d.sprite": "1.0.0",
     "com.unity.2d.tilemap": "1.0.0",
     "com.unity.2d.tilemap.extras": "file:E:/Git test/2d tile map extras package clone/2d-extras",
     "com.unity.cinemachine": "2.6.15",

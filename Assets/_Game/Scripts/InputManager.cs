@@ -11,10 +11,15 @@ public class InputManager : MonoBehaviour
     private float swipeDetectTriggerLine = 0.6f;  //cos(45) ~ 1
     [SerializeField]
     private float sensitiveThreshold = 150f;
+    [SerializeField]
     private bool isUpLock = false;
+    [SerializeField]
     private bool isDownLock = false;
+    [SerializeField]
     private bool isLeftLock = false;
+    [SerializeField]
     private bool isRightLock = false;
+    [SerializeField]
     private bool isInputLock = false;
 
 
@@ -53,7 +58,7 @@ public class InputManager : MonoBehaviour
             isSwipe = false;
             if (!isInputLock)
             {
-                Debug.Log((mouseUpPos - mouseDownPos).magnitude + "   " + mouseDownPos + "   " + mouseUpPos +"  " + (mouseUpPos - mouseDownPos));
+                // Debug.Log((mouseUpPos - mouseDownPos).magnitude + "   " + mouseDownPos + "   " + mouseUpPos +"  " + (mouseUpPos - mouseDownPos));
                 if ((mouseUpPos - mouseDownPos).magnitude > sensitiveThreshold)
                 {
                     Vector2 dir = (mouseUpPos - mouseDownPos).normalized;
@@ -86,6 +91,13 @@ public class InputManager : MonoBehaviour
         if (state == GameManager.GameState.Play)
         {
             isInputLock = false;
+        }
+        if (state == GameManager.GameState.ResultPhase)
+        {
+            isUpLock = false;
+            isDownLock = false;
+            isLeftLock = false;
+            isRightLock = false;
         }
     }
 

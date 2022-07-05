@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -42,7 +43,6 @@ public class UIManager : MonoBehaviour
             case GameManager.GameState.Play:
                 InGamePanel.SetActive(true);
                 EndGamePanel.SetActive(false);
-                Debug.Log("UIPlay");
                 break;
             case GameManager.GameState.PreEndLevel:
                 InGamePanel.SetActive(false);
@@ -69,5 +69,16 @@ public class UIManager : MonoBehaviour
     public void OnClickSettingButton()
     {
         SettingMenuDropdown.SetActive(!SettingMenuDropdown.activeInHierarchy);
+    }
+    public void OnClickPlayAgainButton()
+    {
+        LevelManager.Instance.PlayAgain();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        GameManager.Instance.ChangeGameState(GameManager.GameState.Play);
+    }
+    public void OnClickNextLevelButton()
+    {
+        LevelManager.Instance.NextLevel();
+        GameManager.Instance.ChangeGameState(GameManager.GameState.Play);
     }
 }

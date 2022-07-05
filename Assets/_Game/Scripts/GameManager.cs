@@ -79,7 +79,6 @@ public class GameManager : MonoBehaviour
     public void OnGameStatePreEndLevel()
     {
         Debug.Log("GameStatePreEndLevel");
-
     }
     public void OnGameStateStartGame()
     {
@@ -104,6 +103,6 @@ public class GameManager : MonoBehaviour
     IEnumerator DelayStartResultPhase()
     {
         yield return new WaitForSeconds(4f);
-        GameManager.Instance.ChangeGameState(GameManager.GameState.ResultPhase);
+        ChangeGameState(GameManager.GameState.ResultPhase);
     }
 }

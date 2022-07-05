@@ -4,6 +4,17 @@ using UnityEngine;
 
 public class PrefabManager : MonoBehaviour
 {
+    [System.Serializable]
+    public class Pool
+    {
+        public ObjectType tag;
+        public GameObject objectPrefab;
+        public int size;
+    }
+    public List<Pool> Pools;
+    public Dictionary<ObjectType, Queue<GameObject>> poolDictionary;
+
+    #region singleton
     public static PrefabManager Instance { get; private set; }
     private void Awake()
     {
@@ -16,5 +27,64 @@ public class PrefabManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+    #endregion singleton
+
+    void Start()
+    {
+        poolDictionary = new Dictionary<ObjectType, Queue<GameObject>>();
+
+        foreach (Pool pool in Pools)
+        {
+            Queue<GameObject> objQueue = new Queue<GameObject>();
+
+            for (int i = 0; i < pool.size; i++)
+            {
+                GameObject obj = Instantiate(pool.objectPrefab);
+                obj.SetActive(false);
+                objQueue.Enqueue(obj);
+            }
+
+            poolDictionary.Add(pool.tag, objQueue);
+        }
+    }
+
+    public GameObject SpawnFromPool(ObjectType tag, Vector3 spawnPos, Quaternion rotation)
+    {
+        if (!poolDictionary.ContainsKey(tag))
+        {
+            Debug.LogWarning("pool not exist " + tag);
+            return null;
+        }
+
+        GameObject obj = poolDictionary[tag].Dequeue();
+        Transform objTrans = obj.transform;
+
+        obj.SetActive(true);
+        objTrans.position = spawnPos;
+        objTrans.rotation = rotation;
+
+        IPooledObject pooledObject = obj.GetComponent<IPooledObject>();
+
+        if (pooledObject != null)
+        {
+            pooledObject.OnObjectSpawn();
+        }
+
+        poolDictionary[tag].Enqueue(obj);
+
+        return obj;
+    }
+
+    public enum ObjectType
+    {
+        DefaultBlock,
+        PlayerBlock,
+        WallBlock,
+        StackBlock,
+        BridgeBlock,
+        CornerBlock,
+        WideBrigeBlock,
+        BounceBlock
     }
 }

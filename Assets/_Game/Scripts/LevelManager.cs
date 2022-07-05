@@ -5,7 +5,6 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour
 {
     public Level CurLevel = Level.Level_1;
-    public int GoldBonus = 0;
     public static LevelManager Instance { get; private set; }
     private void Awake()
     {
@@ -55,6 +54,15 @@ public class LevelManager : MonoBehaviour
                 break;
         }
         return goldCount;
+    }
+    public void PlayAgain(){
+
+    }
+    public void NextLevel(){
+        CurLevel += 1;
+    }
+    public void LoadLevel(){
+        
     }
     public enum Level
     {

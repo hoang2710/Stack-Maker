@@ -19,12 +19,13 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        Screen.SetResolution(1080, 1920, false);
-        Debug.Log(Screen.currentResolution.width + "   " + Screen.currentResolution.height);
-        Screen.autorotateToPortrait = true;
     }
     void Start()
     {
+        Screen.SetResolution(1080, 1920, false);
+        Debug.Log(Screen.currentResolution.width + "   " + Screen.currentResolution.height);
+        Screen.autorotateToPortrait = true;
+        
         ChangeGameState(GameState.Play);
     }
     public void ChangeGameState(GameState state)

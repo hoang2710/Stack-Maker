@@ -2,12 +2,35 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Stack : MonoBehaviour
+public class Stack : MonoBehaviour, IPooledObject
 {
     [SerializeField]
     private float stackHeight = 0.3f;
     public Collider Col;
     public Transform StackTrans;
+    public Transform BlockTrans;
+    private Vector3 localStackPosition; 
+
+    public void OnObjectSpawn()
+    {
+        StackTrans.parent = BlockTrans;
+        StackTrans.localPosition = localStackPosition;
+    }
+    private void Start() {
+        localStackPosition = StackTrans.localPosition;
+        GameManager.OnGameStateChanged += GameManagerOnGameStateChanged;
+    }
+    private void OnDestroy()
+    {
+        GameManager.OnGameStateChanged -= GameManagerOnGameStateChanged;
+    }
+    private void GameManagerOnGameStateChanged(GameManager.GameState state)
+    {
+        if (state == GameManager.GameState.Loading)
+        {
+            this.gameObject.SetActive(false);
+        }
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))

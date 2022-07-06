@@ -85,6 +85,7 @@ public class PrefabManager : MonoBehaviour
         BridgeBlock,
         CornerBlock,
         WideBrigeBlock,
-        BounceBlock
+        BounceBlock,
+        FinishLine
     }
 }

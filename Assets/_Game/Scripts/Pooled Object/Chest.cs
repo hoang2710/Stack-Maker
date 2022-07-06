@@ -2,11 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Chest : MonoBehaviour
+public class Chest : MonoBehaviour, IPooledObject
 {
     public GameObject DefaultChest;
     public GameObject OpenChest;
     public Transform StayPosition;
+
+    public void OnObjectSpawn()
+    {
+        DefaultChest.SetActive(true);
+        OpenChest.SetActive(false);
+    }
     void Start()
     {
         GameManager.OnGameStateChanged += GameManagerOnGameStateChanged;
@@ -18,7 +24,10 @@ public class Chest : MonoBehaviour
     }
     private void GameManagerOnGameStateChanged(GameManager.GameState state)
     {
-
+        if (state == GameManager.GameState.Loading)
+        {
+            this.gameObject.SetActive(false);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -38,6 +47,6 @@ public class Chest : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         OpenChest.SetActive(true);
-        this.gameObject.SetActive(false);
+        DefaultChest.SetActive(false);
     }
 }

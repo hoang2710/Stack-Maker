@@ -2,9 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FinishLine : MonoBehaviour
+public class FinishLine : MonoBehaviour, IPooledObject
 {
     public GameObject FireCracker;
+
+    public void OnObjectSpawn()
+    {
+        FireCracker.SetActive(false);
+    }
     void Start()
     {
         GameManager.OnGameStateChanged += GameManagerOnGameStateChanged;
@@ -16,7 +21,10 @@ public class FinishLine : MonoBehaviour
     }
     private void GameManagerOnGameStateChanged(GameManager.GameState state)
     {
-
+        if (state == GameManager.GameState.Loading)
+        {
+            this.gameObject.SetActive(false);
+        }
     }
 
     private void OnTriggerEnter(Collider other)

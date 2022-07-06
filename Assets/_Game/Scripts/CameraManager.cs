@@ -6,7 +6,7 @@ using Cinemachine;
 public class CameraManager : MonoBehaviour
 {
     public Animator anim;
-    public GameObject[] cinemachines;
+    public CinemachineVirtualCamera[] cinemachines;
     public int fullWidthUnits = 8;
     public static CameraManager Instance { get; private set; }
     private void Awake()
@@ -37,6 +37,17 @@ public class CameraManager : MonoBehaviour
         if (state == GameManager.GameState.Play)
         {
             anim.Play("Default Cam");
+
+            Transform playerTrans = GameObject.FindGameObjectWithTag("Player").transform;
+
+            if (playerTrans != null)
+            {
+                foreach (var item in cinemachines)
+                {
+                    item.m_Follow = playerTrans.transform;
+                    item.m_LookAt = playerTrans.transform;
+                }
+            }
         }
 
         if (state == GameManager.GameState.PreEndLevel)

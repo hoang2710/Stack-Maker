@@ -2,12 +2,34 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StackMinus : MonoBehaviour
+public class StackMinus : MonoBehaviour, IPooledObject
 {
     [SerializeField]
     private float stackHeight = 0.45f;
     public GameObject GoldenPlate;
     public Collider Col;
+
+    public void OnObjectSpawn()
+    {
+        Col.enabled = true;
+        GoldenPlate.SetActive(false);
+    }
+    void Start()
+    {
+        GameManager.OnGameStateChanged += GameManagerOnGameStateChanged;
+    }
+
+    private void OnDestroy()
+    {
+        GameManager.OnGameStateChanged -= GameManagerOnGameStateChanged;
+    }
+    private void GameManagerOnGameStateChanged(GameManager.GameState state)
+    {
+        if (state == GameManager.GameState.Loading)
+        {
+            this.gameObject.SetActive(false);
+        }
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))

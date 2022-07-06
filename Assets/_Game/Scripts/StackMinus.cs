@@ -7,6 +7,7 @@ public class StackMinus : MonoBehaviour
     [SerializeField]
     private float stackHeight = 0.45f;
     public GameObject GoldenPlate;
+    public Collider Col;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -19,11 +20,11 @@ public class StackMinus : MonoBehaviour
                 player.StackList.Pop();
                 player.StackParent.position -= Vector3.up * stackHeight;
                 player.CharacterTrans.position -= Vector3.up * stackHeight;
-                Destroy(tempStack.gameObject);
+                tempStack.gameObject.SetActive(false);
                 GoldenPlate.SetActive(true);
 
                 player.Anim.SetInteger(ConstValue.PLAYER_ANIM, 1);
-                Destroy(this);
+                Col.enabled = false;
             }
         }
     }

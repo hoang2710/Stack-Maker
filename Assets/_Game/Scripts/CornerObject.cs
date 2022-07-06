@@ -8,6 +8,11 @@ public class CornerObject : MonoBehaviour
     public bool isDownLock = false;
     public bool isLeftLock = false;
     public bool isRightLock = false;
+    public Transform CornerBlockObject;
+    private bool isStackAvailable = true;
+    public Transform StackTrans;
+    [SerializeField]
+    private float stackHeight = 0.3f;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -17,7 +22,21 @@ public class CornerObject : MonoBehaviour
             if (player != null)
             {
                 player.MoveDir = Vector3.zero;
-                player.transform.position = transform.position;
+                player.transform.position = CornerBlockObject.position;
+
+                if (isStackAvailable)
+                {
+                    player.StackList.Push(StackTrans.gameObject);
+                    player.StackParent.position += Vector3.up * stackHeight;
+                    player.CharacterTrans.position += Vector3.up * stackHeight;
+                    StackTrans.position = player.StackRoot.position;
+                    StackTrans.parent = player.StackParent;
+
+                    player.Anim.SetInteger(ConstValue.PLAYER_ANIM, 1);
+
+                    Debug.Log("stack plus");
+                    isStackAvailable = false;
+                }
             }
 
             InputManager.Instance.UpdateDirectionLock(isUpLock, isDownLock, isLeftLock, isRightLock);

@@ -53,7 +53,7 @@ public class Player : MonoBehaviour
 
         stackDirection = StackRoot.forward;
 
-        StackRoot.position = transform.position;
+        StackRoot.position = PlayerTrans.position;
         StackParent.position = StackRoot.position;
         StackParent.parent = StackRoot;
 

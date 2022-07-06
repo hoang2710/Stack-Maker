@@ -5,16 +5,16 @@ using UnityEngine;
 public class Stack : MonoBehaviour
 {
     [SerializeField]
-    private float stackHeight = 0.45f;
+    private float stackHeight = 0.3f;
     public Collider Col;
     public Transform StackTrans;
     private void OnTriggerEnter(Collider other)
     {
-
         if (other.CompareTag("Player"))
         {
             Col.enabled = false;
             Player player = other.GetComponent<Player>();
+            Debug.Log(player.name);
 
             // if (player.StackParent == null)
             // {
@@ -26,13 +26,15 @@ public class Stack : MonoBehaviour
             // else
             if (player != null)
             {
-                player.StackList.Push(this.gameObject);
+                player.StackList.Push(StackTrans.gameObject);
                 player.StackParent.position += Vector3.up * stackHeight;
                 player.CharacterTrans.position += Vector3.up * stackHeight;
                 StackTrans.position = player.StackRoot.position;
                 StackTrans.parent = player.StackParent;
 
                 player.Anim.SetInteger(ConstValue.PLAYER_ANIM, 1);
+
+                Debug.Log("stack plus");
             }
 
         }

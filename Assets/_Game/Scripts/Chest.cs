@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class Chest : MonoBehaviour
 {
+    public GameObject DefaultChest;
     public GameObject OpenChest;
     public Transform StayPosition;
-    void Awake()
+    void Start()
     {
         GameManager.OnGameStateChanged += GameManagerOnGameStateChanged;
     }

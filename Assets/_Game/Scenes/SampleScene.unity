@@ -30365,7 +30365,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Pools:
-  - tag: 0
+  - tag: 5
+    objectPrefab: {fileID: 0}
+    size: 0
+  - tag: 1
     objectPrefab: {fileID: 0}
     size: 0
 --- !u!4 &1760863683

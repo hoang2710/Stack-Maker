@@ -27,16 +27,7 @@ public class Stack : MonoBehaviour, IPooledObject
         {
             Col.enabled = false;
             Player player = other.GetComponent<Player>();
-            Debug.Log(player.name);
 
-            // if (player.StackParent == null)
-            // {
-            //     player.StackParent = transform;
-            //     player.StackRoot.position = transform.position;
-            //     player.StackParent.position = player.StackRoot.position;
-            //     player.StackParent.parent = player.StackRoot;
-            // }
-            // else
             if (player != null)
             {
                 player.StackList.Push(StackTrans.gameObject);
@@ -47,7 +38,6 @@ public class Stack : MonoBehaviour, IPooledObject
 
                 player.Anim.SetInteger(ConstValue.PLAYER_ANIM, 1);
 
-                Debug.Log("stack plus");
             }
 
         }

@@ -104,7 +104,6 @@ public class Player : MonoBehaviour
                 break;
         }
     }
-
     private void GameManagerOnGameStateChanged(GameManager.GameState state)
     {
         switch (state)
@@ -125,7 +124,6 @@ public class Player : MonoBehaviour
                 break;
         }
     }
-
     IEnumerator SlowSetAnimValue()
     {
         while (true)

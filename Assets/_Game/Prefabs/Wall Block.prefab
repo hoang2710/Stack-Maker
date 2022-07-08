@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4585070549765595}
   - component: {fileID: 33150582636411261}
   - component: {fileID: 23054566729670232}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: zhangaikuai
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,8 @@ GameObject:
   m_Component:
   - component: {fileID: 47887167014047094}
   - component: {fileID: 6409391849923634070}
-  m_Layer: 5
+  - component: {fileID: 2830815027259105609}
+  m_Layer: 6
   m_Name: Wall Block
   m_TagString: Tile Block
   m_Icon: {fileID: 0}
@@ -128,6 +129,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Tag: 2
   Position: {x: 0, y: 0, z: 0}
+--- !u!65 &2830815027259105609
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1121066348938118}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 6, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1942554265256315
 GameObject:
   m_ObjectHideFlags: 0
@@ -139,7 +153,7 @@ GameObject:
   - component: {fileID: 4984315868566344}
   - component: {fileID: 33936381978010137}
   - component: {fileID: 23414351932707327}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: di
   m_TagString: Untagged
   m_Icon: {fileID: 0}

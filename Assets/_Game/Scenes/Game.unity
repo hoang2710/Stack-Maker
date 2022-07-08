@@ -3732,7 +3732,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2f9fba290d0d6e4c980353d332b7fd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurLevel: 3
+  CurLevel: 1
   CurLevelEditor: 1
 --- !u!4 &2110165877
 Transform:

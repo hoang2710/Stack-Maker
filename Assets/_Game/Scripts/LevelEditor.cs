@@ -20,7 +20,7 @@ public class LevelEditor : Editor
         {
             script.ClearLevelEditor();
         }
-        if (GUILayout.Button("Load Level(not working)"))
+        if (GUILayout.Button("Load Level(not working in builder)"))
         {
             script.LoadLevel();
         }

@@ -10,4 +10,5 @@ public static class ConstValue
     public static int GOLD_AT_LVL_4 = 20;
     public static int GOLD_AT_LVL_5 = 225;
     public static string PLAYER_ANIM = "renwu";
+    public static int WALL_BLOCK_LAYER_MASK = 1 << 6;
 }

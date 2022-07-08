@@ -18,7 +18,7 @@ public class CornerObject : MonoBehaviour, IPooledObject
 
     public void OnObjectSpawn()
     {
-        SetLockDirection();
+        StartCoroutine(DelaySetLockDir());
         StackTrans.parent = BlockTrans;
         StackTrans.position = BlockTrans.position + localOffset;
     }
@@ -29,10 +29,24 @@ public class CornerObject : MonoBehaviour, IPooledObject
 
     public void SetLockDirection()
     {
-        isUpLock = false;
-        isDownLock = false;
-        isLeftLock = false;
-        isRightLock = false;
+        RaycastHit hit;
+        Debug.Log("set value  " + BlockTrans.position);
+        if (Physics.Raycast(BlockTrans.position, Vector3.forward,out hit, 1f, ConstValue.WALL_BLOCK_LAYER_MASK))
+        {
+            isUpLock = true; Debug.Log("up " + hit.transform.name);
+        }
+        if (Physics.Raycast(BlockTrans.position, Vector3.back,out hit, 1f, ConstValue.WALL_BLOCK_LAYER_MASK))
+        {
+            isDownLock = true; Debug.Log("down " + hit.transform.name);
+        }
+        if (Physics.Raycast(BlockTrans.position, Vector3.left,out hit, 1f, ConstValue.WALL_BLOCK_LAYER_MASK))
+        {
+            isLeftLock = true; Debug.Log("left " + hit.transform.name);
+        }
+        if (Physics.Raycast(BlockTrans.position, Vector3.right,out hit, 1f, ConstValue.WALL_BLOCK_LAYER_MASK))
+        {
+            isRightLock = true; Debug.Log("right " + hit.transform.name);
+        }
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -62,5 +76,10 @@ public class CornerObject : MonoBehaviour, IPooledObject
 
             InputManager.Instance.UpdateDirectionLock(isUpLock, isDownLock, isLeftLock, isRightLock);
         }
+    }
+
+    IEnumerator DelaySetLockDir(){
+        yield return new WaitForSeconds(1f);
+        SetLockDirection();
     }
 }

@@ -283,7 +283,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3162080373397505742}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: zhangai
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -400,7 +400,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6186938796661077695}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: zhangai (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -598,7 +598,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6759429344719807653}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: zhangai (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -634,7 +634,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9063000079184063612}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: zhangai (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 7301344513310843789}
   - component: {fileID: 3843795627376940620}
   - component: {fileID: -4762243654734055998}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Stack Block
   m_TagString: Tile Block
   m_Icon: {fileID: 0}

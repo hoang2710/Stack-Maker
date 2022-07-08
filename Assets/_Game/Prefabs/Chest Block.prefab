@@ -5488,7 +5488,7 @@ GameObject:
   - component: {fileID: 1558366002172121954}
   - component: {fileID: 4439762984586937209}
   - component: {fileID: 1155614759426424335}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Chest Block
   m_TagString: Tile Block
   m_Icon: {fileID: 0}

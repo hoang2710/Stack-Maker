@@ -80,10 +80,9 @@ public class LevelManager : MonoBehaviour
         if (level != null)
         {
             Debug.Log("data found");
-            if (!ClearLevelEditor())
-            {
-                ClearLevel();
-            }
+
+            ClearLevel();
+
             foreach (var item in level.tileList)
             {
                 // Debug.Log(item.Tag);

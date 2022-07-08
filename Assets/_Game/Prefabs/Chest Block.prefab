@@ -5487,9 +5487,10 @@ GameObject:
   - component: {fileID: 5605172776910777557}
   - component: {fileID: 1558366002172121954}
   - component: {fileID: 4439762984586937209}
+  - component: {fileID: 1155614759426424335}
   m_Layer: 5
   m_Name: Chest Block
-  m_TagString: Untagged
+  m_TagString: Tile Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5540,6 +5541,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 3, z: -1}
+--- !u!114 &1155614759426424335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3965340320124536426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 278fa1ee2f904b4458dc2ea3e433d90c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Tag: 9
+  Position: {x: 0, y: 0, z: 0}
 --- !u!1 &4239376268135887240
 GameObject:
   m_ObjectHideFlags: 0

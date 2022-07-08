@@ -92,9 +92,10 @@ GameObject:
   - component: {fileID: 4607530174121408886}
   - component: {fileID: 9212168005523614965}
   - component: {fileID: 1028118429009557522}
+  - component: {fileID: -8810230738349665262}
   m_Layer: 5
   m_Name: Corner Block
-  m_TagString: Untagged
+  m_TagString: Tile Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -149,6 +150,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0000005, y: 0.44984776, z: 1}
   m_Center: {x: 0.0000060945777, y: 2.724949, z: -0.0000002741693}
+--- !u!114 &-8810230738349665262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1045506591760351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 278fa1ee2f904b4458dc2ea3e433d90c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Tag: 5
+  Position: {x: 0, y: 0, z: 0}
 --- !u!1 &1494017965046362
 GameObject:
   m_ObjectHideFlags: 0

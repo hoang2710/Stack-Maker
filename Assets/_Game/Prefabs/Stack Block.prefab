@@ -92,9 +92,10 @@ GameObject:
   - component: {fileID: 622331242597413084}
   - component: {fileID: 7301344513310843789}
   - component: {fileID: 3843795627376940620}
+  - component: {fileID: -4762243654734055998}
   m_Layer: 5
   m_Name: Stack Block
-  m_TagString: Untagged
+  m_TagString: Tile Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -144,6 +145,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 2.5, z: 0}
+--- !u!114 &-4762243654734055998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1045506591760351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 278fa1ee2f904b4458dc2ea3e433d90c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Tag: 3
+  Position: {x: 0, y: 0, z: 0}
 --- !u!1 &1494017965046362
 GameObject:
   m_ObjectHideFlags: 0

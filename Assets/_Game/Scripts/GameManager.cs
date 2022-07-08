@@ -25,8 +25,8 @@ public class GameManager : MonoBehaviour
         Screen.SetResolution(1080, 1920, false);
         Debug.Log(Screen.currentResolution.width + "   " + Screen.currentResolution.height);
         Screen.autorotateToPortrait = true;
-        
-        ChangeGameState(GameState.Play);
+
+        StartCoroutine(DelayChangeGameState(GameState.Loading, 1f));
     }
     public void ChangeGameState(GameState state)
     {
@@ -63,6 +63,7 @@ public class GameManager : MonoBehaviour
     public void OnGameStateLoading()
     {
         Debug.Log("GameStateLoading");
+        StartCoroutine(DelayChangeGameState(GameState.Play, 2f));
     }
     public void OnGameStatePlay()
     {
@@ -71,7 +72,7 @@ public class GameManager : MonoBehaviour
     public void OnGameStateEndLevel()
     {
         Debug.Log("GameStateEndLevel");
-        StartCoroutine(DelayStartResultPhase());
+        StartCoroutine(DelayChangeGameState(GameState.ResultPhase, 4f));
     }
     public void OnGameStateRestartLevel()
     {
@@ -101,9 +102,10 @@ public class GameManager : MonoBehaviour
         ResultPhase
     }
 
-    IEnumerator DelayStartResultPhase()
+    IEnumerator DelayChangeGameState(GameState state, float time)
     {
-        yield return new WaitForSeconds(4f);
-        ChangeGameState(GameManager.GameState.ResultPhase);
+        yield return new WaitForSeconds(time);
+        ChangeGameState(state);
     }
+
 }

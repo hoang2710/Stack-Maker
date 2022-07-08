@@ -21920,9 +21920,10 @@ GameObject:
   - component: {fileID: 4665742350087425009}
   - component: {fileID: 4665742350087425014}
   - component: {fileID: 4665742350087425015}
+  - component: {fileID: -650680033391556531}
   m_Layer: 0
   m_Name: Finish Line
-  m_TagString: Untagged
+  m_TagString: Tile Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21977,6 +21978,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 9, y: 1, z: 1}
   m_Center: {x: 0, y: 3, z: 0}
+--- !u!114 &-650680033391556531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4665742350087425008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 278fa1ee2f904b4458dc2ea3e433d90c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Tag: 8
+  Position: {x: 0, y: 0, z: 0}
 --- !u!1 &4665742350110009211
 GameObject:
   m_ObjectHideFlags: 0

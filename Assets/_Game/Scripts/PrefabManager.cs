@@ -12,9 +12,8 @@ public class PrefabManager : MonoBehaviour
         public int size;
     }
     public List<Pool> Pools;
-    public Dictionary<ObjectType, Queue<GameObject>> poolDictionary;
+    public Dictionary<ObjectType, Queue<GameObject>> poolDictionary = new Dictionary<ObjectType, Queue<GameObject>>();
 
-    #region singleton
     public static PrefabManager Instance { get; private set; }
     private void Awake()
     {
@@ -28,11 +27,9 @@ public class PrefabManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    #endregion singleton
 
     void Start()
     {
-        poolDictionary = new Dictionary<ObjectType, Queue<GameObject>>();
 
         foreach (Pool pool in Pools)
         {
@@ -86,6 +83,7 @@ public class PrefabManager : MonoBehaviour
         CornerBlock,
         WideBrigeBlock,
         BounceBlock,
-        FinishLine
+        FinishLine,
+        ChestBlock
     }
 }

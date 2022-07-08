@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEditor;
 
 public class LevelManager : MonoBehaviour
 {
-    public Tilemap tilemap;
     public Level CurLevel = Level.Level_1;
     public static LevelManager Instance { get; private set; }
     private void Awake()
@@ -19,12 +19,10 @@ public class LevelManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
-        GameManager.OnGameStateChanged += GameManagerOnGameStateChanged;
     }
-    private void Update()
+    private void Start()
     {
-        Debug.Log(tilemap.cellBounds.max.x+"   "+tilemap.cellBounds.min.x);
+        GameManager.OnGameStateChanged += GameManagerOnGameStateChanged;
     }
     private void OnDestroy()
     {
@@ -33,7 +31,14 @@ public class LevelManager : MonoBehaviour
 
     private void GameManagerOnGameStateChanged(GameManager.GameState state)
     {
-
+        switch (state)
+        {
+            case GameManager.GameState.Loading:
+                LoadLevel();
+                break;
+            default:
+                break;
+        }
     }
     public int GetGoldBonus()
     {
@@ -66,23 +71,91 @@ public class LevelManager : MonoBehaviour
     }
     public void NextLevel()
     {
-        CurLevel += 1;
+
     }
     public void LoadLevel()
     {
-        LoadMap();
-    }
-    private void LoadMap()
-    {
+        var level = Resources.Load<ScriptableObjectLevel>($"LevelData/level {(int)CurLevel}");
 
+        if (level != null)
+        {
+            Debug.Log("data found");
+            if (!ClearLevelEditor())
+            {
+                ClearLevel();
+            }
+            foreach (var item in level.tileList)
+            {
+                // Debug.Log(item.Tag);
+                PrefabManager.Instance.SpawnFromPool(item.Tag, item.Position, Quaternion.identity);
+            }
+        }
+        Debug.Log("level loaded");
     }
+    public void ClearLevel()
+    {
+        GameObject[] objs = GameObject.FindGameObjectsWithTag("Tile Block");
+        foreach (var item in objs)
+        {
+            item.SetActive(false);
+        }
+    }
+
 
     public enum Level
     {
+        Null,
         Level_1,
         Level_2,
         Level_3,
         Level_4,
         Level_5
     }
+
+#if UNITY_EDITOR
+
+    public Level CurLevelEditor = Level.Level_1;
+
+    public void SaveLevel()
+    {
+
+        var newLevel = ScriptableObject.CreateInstance<ScriptableObjectLevel>();
+
+        newLevel.level = CurLevelEditor;
+        newLevel.name = $"level {(int)CurLevelEditor}";
+
+        GameObject[] tile = GameObject.FindGameObjectsWithTag("Tile Block");
+        List<TileData> tileDatas = new List<TileData>();
+        foreach (var item in tile)
+        {
+            TileType tmp = item.GetComponent<TileType>();
+            TileData tileData = new TileData();
+            tileData.Tag = tmp.Tag;
+            tileData.Position = tmp.Position;
+            Debug.Log(tileData.Tag + "  " + tileData.Position);
+            tileDatas.Add(tileData);
+        }
+        Debug.Log(tileDatas.Count);
+        newLevel.tileList = tileDatas;
+        Debug.Log(newLevel.tileList.Count + " tileList");
+        SaveToAsset(newLevel);
+
+    }
+    public bool ClearLevelEditor()
+    {
+        GameObject[] objs = GameObject.FindGameObjectsWithTag("Tile Block");
+        foreach (var item in objs)
+        {
+            Destroy(item);
+        }
+
+        return true;
+    }
+    private void SaveToAsset(ScriptableObjectLevel level)
+    {
+        AssetDatabase.CreateAsset(level, $"Assets/_Game/Resources/LevelData/{level.name}.asset");
+        AssetDatabase.SaveAssets();
+        AssetDatabase.Refresh();
+    }
+#endif
 }

@@ -87,7 +87,7 @@ public class LevelManager : MonoBehaviour
             foreach (var item in level.tileList)
             {
                 // Debug.Log(item.Tag);
-                PrefabManager.Instance.SpawnFromPool(item.Tag, item.Position, Quaternion.identity);
+                PrefabManager.Instance.PopFromPool(item.Tag, item.Position, Quaternion.identity);
             }
         }
         Debug.Log("level loaded");
@@ -144,12 +144,48 @@ public class LevelManager : MonoBehaviour
     public bool ClearLevelEditor()
     {
         GameObject[] objs = GameObject.FindGameObjectsWithTag("Tile Block");
-        foreach (var item in objs)
+        if (objs != null)
         {
-            Destroy(item);
+            foreach (var item in objs)
+            {
+                DestroyImmediate(item);
+            }
         }
 
         return true;
+    }
+    public void CountWideBlockNeedToBuild()
+    {
+        GameObject[] objs = GameObject.FindGameObjectsWithTag("Tile Block");
+
+        int stackCount = 0;
+        int stackMinusCount = 0;
+        if (objs != null)
+        {
+            foreach (var item in objs)
+            {
+                TileType tt = item.GetComponent<TileType>();
+                switch (tt.Tag)
+                {
+                    case PrefabManager.ObjectType.StackBlock:
+                        stackCount++;
+                        break;
+                    case PrefabManager.ObjectType.BridgeBlock:
+                        stackMinusCount++;
+                        break;
+                    case PrefabManager.ObjectType.WideBrigeBlock:
+                        stackMinusCount++;
+                        break;
+                    case PrefabManager.ObjectType.CornerBlock:
+                        stackCount++;
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+
+        Debug.Log(stackCount - stackMinusCount);
     }
     private void SaveToAsset(ScriptableObjectLevel level)
     {

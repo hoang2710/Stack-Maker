@@ -20,9 +20,12 @@ public class LevelEditor : Editor
         {
             script.ClearLevelEditor();
         }
-        if (GUILayout.Button("Load Level"))
+        if (GUILayout.Button("Load Level(not working)"))
         {
             script.LoadLevel();
+        }
+        if(GUILayout.Button("Count Minus Block Left To Build")){
+            script.CountWideBlockNeedToBuild();
         }
     }
 }

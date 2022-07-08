@@ -9,28 +9,18 @@ public class Stack : MonoBehaviour, IPooledObject
     public Collider Col;
     public Transform StackTrans;
     public Transform BlockTrans;
-    private Vector3 localStackPosition; 
+    private Vector3 localOffset;
 
     public void OnObjectSpawn()
     {
         StackTrans.parent = BlockTrans;
-        StackTrans.localPosition = localStackPosition;
+        StackTrans.position = BlockTrans.position + localOffset;
     }
-    private void Start() {
-        localStackPosition = StackTrans.localPosition;
-        GameManager.OnGameStateChanged += GameManagerOnGameStateChanged;
-    }
-    private void OnDestroy()
+    private void Awake()
     {
-        GameManager.OnGameStateChanged -= GameManagerOnGameStateChanged;
+        localOffset = StackTrans.position - BlockTrans.position;
     }
-    private void GameManagerOnGameStateChanged(GameManager.GameState state)
-    {
-        if (state == GameManager.GameState.Loading)
-        {
-            this.gameObject.SetActive(false);
-        }
-    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))

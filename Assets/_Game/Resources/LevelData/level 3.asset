@@ -1,0 +1,1212 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dff947be2bafebe468f8c313b4b34506, type: 3}
+  m_Name: level 3
+  m_EditorClassIdentifier: 
+  level: 3
+  tileList:
+  - Tag: 1
+    Position: {x: 1.5, y: 0, z: 81.5}
+  - Tag: 3
+    Position: {x: 2.5, y: 0, z: 81.5}
+  - Tag: 3
+    Position: {x: 3.5, y: 0, z: 81.5}
+  - Tag: 3
+    Position: {x: 4.5, y: 0, z: 81.5}
+  - Tag: 3
+    Position: {x: 5.5, y: 0, z: 81.5}
+  - Tag: 3
+    Position: {x: 6.5, y: 0, z: 81.5}
+  - Tag: 3
+    Position: {x: 7.5, y: 0, z: 82.5}
+  - Tag: 3
+    Position: {x: 7.5, y: 0, z: 83.5}
+  - Tag: 3
+    Position: {x: 7.5, y: 0, z: 84.5}
+  - Tag: 3
+    Position: {x: 7.5, y: 0, z: 85.5}
+  - Tag: 3
+    Position: {x: 7.5, y: 0, z: 86.5}
+  - Tag: 3
+    Position: {x: 7.5, y: 0, z: 87.5}
+  - Tag: 3
+    Position: {x: 6.5, y: 0, z: 88.5}
+  - Tag: 3
+    Position: {x: 5.5, y: 0, z: 88.5}
+  - Tag: 3
+    Position: {x: 4.5, y: 0, z: 88.5}
+  - Tag: 3
+    Position: {x: 3.5, y: 0, z: 88.5}
+  - Tag: 3
+    Position: {x: 2.5, y: 0, z: 88.5}
+  - Tag: 3
+    Position: {x: 1.5, y: 0, z: 88.5}
+  - Tag: 3
+    Position: {x: 0.5, y: 0, z: 88.5}
+  - Tag: 3
+    Position: {x: -0.5, y: 0, z: 88.5}
+  - Tag: 3
+    Position: {x: -1.5, y: 0, z: 88.5}
+  - Tag: 3
+    Position: {x: -2.5, y: 0, z: 89.5}
+  - Tag: 3
+    Position: {x: -2.5, y: 0, z: 90.5}
+  - Tag: 3
+    Position: {x: -2.5, y: 0, z: 91.5}
+  - Tag: 3
+    Position: {x: -2.5, y: 0, z: 92.5}
+  - Tag: 3
+    Position: {x: -1.5, y: 0, z: 93.5}
+  - Tag: 3
+    Position: {x: -0.5, y: 0, z: 93.5}
+  - Tag: 3
+    Position: {x: 0.5, y: 0, z: 93.5}
+  - Tag: 3
+    Position: {x: 1.5, y: 0, z: 94.5}
+  - Tag: 3
+    Position: {x: 1.5, y: 0, z: 101.5}
+  - Tag: 3
+    Position: {x: 1.5, y: 0, z: 102.5}
+  - Tag: 3
+    Position: {x: 1.5, y: 0, z: 103.5}
+  - Tag: 3
+    Position: {x: 1.5, y: 0, z: 104.5}
+  - Tag: 3
+    Position: {x: 1.5, y: 0, z: 105.5}
+  - Tag: 3
+    Position: {x: 1.5, y: 0, z: 106.5}
+  - Tag: 3
+    Position: {x: 2.5, y: 0, z: 107.5}
+  - Tag: 3
+    Position: {x: 3.5, y: 0, z: 107.5}
+  - Tag: 3
+    Position: {x: 4.5, y: 0, z: 107.5}
+  - Tag: 3
+    Position: {x: 5.5, y: 0, z: 107.5}
+  - Tag: 3
+    Position: {x: 6.5, y: 0, z: 106.5}
+  - Tag: 3
+    Position: {x: 6.5, y: 0, z: 105.5}
+  - Tag: 3
+    Position: {x: 6.5, y: 0, z: 104.5}
+  - Tag: 3
+    Position: {x: 6.5, y: 0, z: 103.5}
+  - Tag: 3
+    Position: {x: 5.5, y: 0, z: 102.5}
+  - Tag: 3
+    Position: {x: 4.5, y: 0, z: 102.5}
+  - Tag: 3
+    Position: {x: 3.5, y: 0, z: 102.5}
+  - Tag: 3
+    Position: {x: 2.5, y: 0, z: 102.5}
+  - Tag: 3
+    Position: {x: 0.5, y: 0, z: 102.5}
+  - Tag: 3
+    Position: {x: -0.5, y: 0, z: 102.5}
+  - Tag: 3
+    Position: {x: -1.5, y: 0, z: 102.5}
+  - Tag: 3
+    Position: {x: -2.5, y: 0, z: 102.5}
+  - Tag: 3
+    Position: {x: -3.5, y: 0, z: 102.5}
+  - Tag: 3
+    Position: {x: -3.5, y: 0, z: 111.5}
+  - Tag: 3
+    Position: {x: -2.5, y: 0, z: 111.5}
+  - Tag: 3
+    Position: {x: -1.5, y: 0, z: 111.5}
+  - Tag: 3
+    Position: {x: -0.5, y: 0, z: 111.5}
+  - Tag: 4
+    Position: {x: 1.5, y: 0, z: 95.5}
+  - Tag: 4
+    Position: {x: 1.5, y: 0, z: 96.5}
+  - Tag: 3
+    Position: {x: 1.5, y: 0, z: 113.5}
+  - Tag: 4
+    Position: {x: 1.5, y: 0, z: 98.5}
+  - Tag: 4
+    Position: {x: 1.5, y: 0, z: 99.5}
+  - Tag: 6
+    Position: {x: 1.5, y: 0, z: 134.5}
+  - Tag: 6
+    Position: {x: 1.5, y: 0, z: 121.5}
+  - Tag: 6
+    Position: {x: 1.5, y: 0, z: 122.5}
+  - Tag: 6
+    Position: {x: 1.5, y: 0, z: 123.5}
+  - Tag: 6
+    Position: {x: 1.5, y: 0, z: 124.5}
+  - Tag: 6
+    Position: {x: 1.5, y: 0, z: 125.5}
+  - Tag: 6
+    Position: {x: 1.5, y: 0, z: 126.5}
+  - Tag: 6
+    Position: {x: 1.5, y: 0, z: 127.5}
+  - Tag: 6
+    Position: {x: 1.5, y: 0, z: 128.5}
+  - Tag: 6
+    Position: {x: 1.5, y: 0, z: 129.5}
+  - Tag: 6
+    Position: {x: 1.5, y: 0, z: 130.5}
+  - Tag: 6
+    Position: {x: 1.5, y: 0, z: 131.5}
+  - Tag: 6
+    Position: {x: 1.5, y: 0, z: 132.5}
+  - Tag: 6
+    Position: {x: 1.5, y: 0, z: 133.5}
+  - Tag: 6
+    Position: {x: 1.5, y: 0, z: 135.5}
+  - Tag: 6
+    Position: {x: 1.5, y: 0, z: 136.5}
+  - Tag: 6
+    Position: {x: 1.5, y: 0, z: 137.5}
+  - Tag: 6
+    Position: {x: 1.5, y: 0, z: 138.5}
+  - Tag: 6
+    Position: {x: 1.5, y: 0, z: 139.5}
+  - Tag: 6
+    Position: {x: 1.5, y: 0, z: 140.5}
+  - Tag: 6
+    Position: {x: 1.5, y: 0, z: 141.5}
+  - Tag: 6
+    Position: {x: 1.5, y: 0, z: 142.5}
+  - Tag: 6
+    Position: {x: 1.5, y: 0, z: 143.5}
+  - Tag: 6
+    Position: {x: 1.5, y: 0, z: 144.5}
+  - Tag: 6
+    Position: {x: 1.5, y: 0, z: 145.5}
+  - Tag: 6
+    Position: {x: 1.5, y: 0, z: 146.5}
+  - Tag: 6
+    Position: {x: 1.5, y: 0, z: 147.5}
+  - Tag: 6
+    Position: {x: 1.5, y: 0, z: 148.5}
+  - Tag: 6
+    Position: {x: 1.5, y: 0, z: 149.5}
+  - Tag: 6
+    Position: {x: 1.5, y: 0, z: 150.5}
+  - Tag: 6
+    Position: {x: 1.5, y: 0, z: 151.5}
+  - Tag: 6
+    Position: {x: 1.5, y: 0, z: 152.5}
+  - Tag: 6
+    Position: {x: 1.5, y: 0, z: 153.5}
+  - Tag: 6
+    Position: {x: 1.5, y: 0, z: 154.5}
+  - Tag: 6
+    Position: {x: 1.5, y: 0, z: 155.5}
+  - Tag: 6
+    Position: {x: 1.5, y: 0, z: 156.5}
+  - Tag: 6
+    Position: {x: 1.5, y: 0, z: 157.5}
+  - Tag: 6
+    Position: {x: 1.5, y: 0, z: 158.5}
+  - Tag: 6
+    Position: {x: 1.5, y: 0, z: 159.5}
+  - Tag: 6
+    Position: {x: 1.5, y: 0, z: 160.5}
+  - Tag: 6
+    Position: {x: 1.5, y: 0, z: 161.5}
+  - Tag: 6
+    Position: {x: 1.5, y: 0, z: 162.5}
+  - Tag: 6
+    Position: {x: 1.5, y: 0, z: 163.5}
+  - Tag: 6
+    Position: {x: 1.5, y: 0, z: 164.5}
+  - Tag: 6
+    Position: {x: 1.5, y: 0, z: 165.5}
+  - Tag: 6
+    Position: {x: 1.5, y: 0, z: 166.5}
+  - Tag: 6
+    Position: {x: 1.5, y: 0, z: 167.5}
+  - Tag: 6
+    Position: {x: 1.5, y: 0, z: 168.5}
+  - Tag: 6
+    Position: {x: 1.5, y: 0, z: 169.5}
+  - Tag: 6
+    Position: {x: 1.5, y: 0, z: 170.5}
+  - Tag: 6
+    Position: {x: 1.5, y: 0, z: 171.5}
+  - Tag: 6
+    Position: {x: 1.5, y: 0, z: 172.5}
+  - Tag: 6
+    Position: {x: 1.5, y: 0, z: 173.5}
+  - Tag: 6
+    Position: {x: 1.5, y: 0, z: 174.5}
+  - Tag: 6
+    Position: {x: 1.5, y: 0, z: 175.5}
+  - Tag: 6
+    Position: {x: 1.5, y: 0, z: 176.5}
+  - Tag: 6
+    Position: {x: 1.5, y: 0, z: 177.5}
+  - Tag: 6
+    Position: {x: 1.5, y: 0, z: 178.5}
+  - Tag: 6
+    Position: {x: 1.5, y: 0, z: 179.5}
+  - Tag: 6
+    Position: {x: 1.5, y: 0, z: 180.5}
+  - Tag: 6
+    Position: {x: 1.5, y: 0, z: 181.5}
+  - Tag: 6
+    Position: {x: 1.5, y: 0, z: 182.5}
+  - Tag: 6
+    Position: {x: 1.5, y: 0, z: 183.5}
+  - Tag: 6
+    Position: {x: 1.5, y: 0, z: 184.5}
+  - Tag: 3
+    Position: {x: 0.5, y: 0, z: 111.5}
+  - Tag: 3
+    Position: {x: 1.5, y: 0, z: 115.5}
+  - Tag: 8
+    Position: {x: 1.5, y: 0, z: 118.5}
+  - Tag: 3
+    Position: {x: 1.5, y: 0, z: 112.5}
+  - Tag: 4
+    Position: {x: 1.5, y: 0, z: 97.5}
+  - Tag: 3
+    Position: {x: 1.5, y: 0, z: 114.5}
+  - Tag: 2
+    Position: {x: -2.5, y: 0, z: 120.5}
+  - Tag: 2
+    Position: {x: -1.5, y: 0, z: 120.5}
+  - Tag: 2
+    Position: {x: -0.5, y: 0, z: 120.5}
+  - Tag: 2
+    Position: {x: 0.5, y: 0, z: 120.5}
+  - Tag: 2
+    Position: {x: 2.5, y: 0, z: 120.5}
+  - Tag: 2
+    Position: {x: 3.5, y: 0, z: 120.5}
+  - Tag: 2
+    Position: {x: 4.5, y: 0, z: 120.5}
+  - Tag: 2
+    Position: {x: 5.5, y: 0, z: 120.5}
+  - Tag: 2
+    Position: {x: -2.5, y: 0, z: 116.5}
+  - Tag: 2
+    Position: {x: -1.5, y: 0, z: 116.5}
+  - Tag: 2
+    Position: {x: -0.5, y: 0, z: 116.5}
+  - Tag: 2
+    Position: {x: 0.5, y: 0, z: 116.5}
+  - Tag: 2
+    Position: {x: 2.5, y: 0, z: 116.5}
+  - Tag: 2
+    Position: {x: 3.5, y: 0, z: 116.5}
+  - Tag: 2
+    Position: {x: 4.5, y: 0, z: 116.5}
+  - Tag: 2
+    Position: {x: 5.5, y: 0, z: 116.5}
+  - Tag: 2
+    Position: {x: 2.5, y: 0, z: 110.5}
+  - Tag: 2
+    Position: {x: 3.5, y: 0, z: 110.5}
+  - Tag: 2
+    Position: {x: 4.5, y: 0, z: 110.5}
+  - Tag: 2
+    Position: {x: 5.5, y: 0, z: 110.5}
+  - Tag: 2
+    Position: {x: 2.5, y: 0, z: 111.5}
+  - Tag: 2
+    Position: {x: 3.5, y: 0, z: 111.5}
+  - Tag: 2
+    Position: {x: 4.5, y: 0, z: 111.5}
+  - Tag: 2
+    Position: {x: 5.5, y: 0, z: 111.5}
+  - Tag: 2
+    Position: {x: 2.5, y: 0, z: 112.5}
+  - Tag: 2
+    Position: {x: 3.5, y: 0, z: 112.5}
+  - Tag: 2
+    Position: {x: 4.5, y: 0, z: 112.5}
+  - Tag: 2
+    Position: {x: 5.5, y: 0, z: 112.5}
+  - Tag: 2
+    Position: {x: 2.5, y: 0, z: 113.5}
+  - Tag: 2
+    Position: {x: 3.5, y: 0, z: 113.5}
+  - Tag: 2
+    Position: {x: 4.5, y: 0, z: 113.5}
+  - Tag: 2
+    Position: {x: 5.5, y: 0, z: 113.5}
+  - Tag: 2
+    Position: {x: 2.5, y: 0, z: 114.5}
+  - Tag: 2
+    Position: {x: 3.5, y: 0, z: 114.5}
+  - Tag: 2
+    Position: {x: 4.5, y: 0, z: 114.5}
+  - Tag: 2
+    Position: {x: 5.5, y: 0, z: 114.5}
+  - Tag: 2
+    Position: {x: 2.5, y: 0, z: 115.5}
+  - Tag: 2
+    Position: {x: 3.5, y: 0, z: 115.5}
+  - Tag: 2
+    Position: {x: 4.5, y: 0, z: 115.5}
+  - Tag: 2
+    Position: {x: 5.5, y: 0, z: 115.5}
+  - Tag: 2
+    Position: {x: -2.5, y: 0, z: 110.5}
+  - Tag: 2
+    Position: {x: -1.5, y: 0, z: 110.5}
+  - Tag: 2
+    Position: {x: -0.5, y: 0, z: 110.5}
+  - Tag: 2
+    Position: {x: 0.5, y: 0, z: 110.5}
+  - Tag: 2
+    Position: {x: -2.5, y: 0, z: 112.5}
+  - Tag: 2
+    Position: {x: -1.5, y: 0, z: 112.5}
+  - Tag: 2
+    Position: {x: -0.5, y: 0, z: 112.5}
+  - Tag: 2
+    Position: {x: 0.5, y: 0, z: 112.5}
+  - Tag: 2
+    Position: {x: -2.5, y: 0, z: 113.5}
+  - Tag: 2
+    Position: {x: -1.5, y: 0, z: 113.5}
+  - Tag: 2
+    Position: {x: -0.5, y: 0, z: 113.5}
+  - Tag: 2
+    Position: {x: 0.5, y: 0, z: 113.5}
+  - Tag: 2
+    Position: {x: -2.5, y: 0, z: 114.5}
+  - Tag: 2
+    Position: {x: -1.5, y: 0, z: 114.5}
+  - Tag: 2
+    Position: {x: -0.5, y: 0, z: 114.5}
+  - Tag: 2
+    Position: {x: 0.5, y: 0, z: 114.5}
+  - Tag: 2
+    Position: {x: -2.5, y: 0, z: 115.5}
+  - Tag: 2
+    Position: {x: -1.5, y: 0, z: 115.5}
+  - Tag: 2
+    Position: {x: -0.5, y: 0, z: 115.5}
+  - Tag: 2
+    Position: {x: 0.5, y: 0, z: 115.5}
+  - Tag: 5
+    Position: {x: 1.5, y: 0, z: 111.5}
+  - Tag: 5
+    Position: {x: 6.5, y: 0, z: 102.5}
+  - Tag: 5
+    Position: {x: 1.5, y: 0, z: 107.5}
+  - Tag: 5
+    Position: {x: 6.5, y: 0, z: 107.5}
+  - Tag: 5
+    Position: {x: -2.5, y: 0, z: 88.5}
+  - Tag: 5
+    Position: {x: -2.5, y: 0, z: 93.5}
+  - Tag: 5
+    Position: {x: 7.5, y: 0, z: 88.5}
+  - Tag: 5
+    Position: {x: 7.5, y: 0, z: 81.5}
+  - Tag: 5
+    Position: {x: 1.5, y: 0, z: 93.5}
+  - Tag: 2
+    Position: {x: 8.5, y: 0, z: 80.5}
+  - Tag: 2
+    Position: {x: -4.5, y: 0, z: 80.5}
+  - Tag: 2
+    Position: {x: -3.5, y: 0, z: 80.5}
+  - Tag: 2
+    Position: {x: -2.5, y: 0, z: 80.5}
+  - Tag: 2
+    Position: {x: -1.5, y: 0, z: 80.5}
+  - Tag: 2
+    Position: {x: -0.5, y: 0, z: 80.5}
+  - Tag: 2
+    Position: {x: 0.5, y: 0, z: 80.5}
+  - Tag: 2
+    Position: {x: 1.5, y: 0, z: 80.5}
+  - Tag: 2
+    Position: {x: 2.5, y: 0, z: 80.5}
+  - Tag: 2
+    Position: {x: 3.5, y: 0, z: 80.5}
+  - Tag: 2
+    Position: {x: 4.5, y: 0, z: 80.5}
+  - Tag: 2
+    Position: {x: 5.5, y: 0, z: 80.5}
+  - Tag: 2
+    Position: {x: 6.5, y: 0, z: 80.5}
+  - Tag: 2
+    Position: {x: 7.5, y: 0, z: 80.5}
+  - Tag: 2
+    Position: {x: -4.5, y: 0, z: 81.5}
+  - Tag: 2
+    Position: {x: -3.5, y: 0, z: 81.5}
+  - Tag: 2
+    Position: {x: -2.5, y: 0, z: 81.5}
+  - Tag: 2
+    Position: {x: -1.5, y: 0, z: 81.5}
+  - Tag: 2
+    Position: {x: -0.5, y: 0, z: 81.5}
+  - Tag: 2
+    Position: {x: 0.5, y: 0, z: 81.5}
+  - Tag: 2
+    Position: {x: 8.5, y: 0, z: 81.5}
+  - Tag: 2
+    Position: {x: -4.5, y: 0, z: 82.5}
+  - Tag: 2
+    Position: {x: -3.5, y: 0, z: 82.5}
+  - Tag: 2
+    Position: {x: -2.5, y: 0, z: 82.5}
+  - Tag: 2
+    Position: {x: -1.5, y: 0, z: 82.5}
+  - Tag: 2
+    Position: {x: -0.5, y: 0, z: 82.5}
+  - Tag: 2
+    Position: {x: 0.5, y: 0, z: 82.5}
+  - Tag: 2
+    Position: {x: 1.5, y: 0, z: 82.5}
+  - Tag: 2
+    Position: {x: 2.5, y: 0, z: 82.5}
+  - Tag: 2
+    Position: {x: 3.5, y: 0, z: 82.5}
+  - Tag: 2
+    Position: {x: 4.5, y: 0, z: 82.5}
+  - Tag: 2
+    Position: {x: 5.5, y: 0, z: 82.5}
+  - Tag: 2
+    Position: {x: 6.5, y: 0, z: 82.5}
+  - Tag: 2
+    Position: {x: 8.5, y: 0, z: 82.5}
+  - Tag: 2
+    Position: {x: -4.5, y: 0, z: 83.5}
+  - Tag: 2
+    Position: {x: -3.5, y: 0, z: 83.5}
+  - Tag: 2
+    Position: {x: -2.5, y: 0, z: 83.5}
+  - Tag: 2
+    Position: {x: -1.5, y: 0, z: 83.5}
+  - Tag: 2
+    Position: {x: -0.5, y: 0, z: 83.5}
+  - Tag: 2
+    Position: {x: 0.5, y: 0, z: 83.5}
+  - Tag: 2
+    Position: {x: 1.5, y: 0, z: 83.5}
+  - Tag: 2
+    Position: {x: 2.5, y: 0, z: 83.5}
+  - Tag: 2
+    Position: {x: 3.5, y: 0, z: 83.5}
+  - Tag: 2
+    Position: {x: 4.5, y: 0, z: 83.5}
+  - Tag: 2
+    Position: {x: 5.5, y: 0, z: 83.5}
+  - Tag: 2
+    Position: {x: 6.5, y: 0, z: 83.5}
+  - Tag: 2
+    Position: {x: 8.5, y: 0, z: 83.5}
+  - Tag: 2
+    Position: {x: -4.5, y: 0, z: 84.5}
+  - Tag: 2
+    Position: {x: -3.5, y: 0, z: 84.5}
+  - Tag: 2
+    Position: {x: -2.5, y: 0, z: 84.5}
+  - Tag: 2
+    Position: {x: -1.5, y: 0, z: 84.5}
+  - Tag: 2
+    Position: {x: -0.5, y: 0, z: 84.5}
+  - Tag: 2
+    Position: {x: 0.5, y: 0, z: 84.5}
+  - Tag: 2
+    Position: {x: 1.5, y: 0, z: 84.5}
+  - Tag: 2
+    Position: {x: 2.5, y: 0, z: 84.5}
+  - Tag: 2
+    Position: {x: 3.5, y: 0, z: 84.5}
+  - Tag: 2
+    Position: {x: 4.5, y: 0, z: 84.5}
+  - Tag: 2
+    Position: {x: 5.5, y: 0, z: 84.5}
+  - Tag: 2
+    Position: {x: 6.5, y: 0, z: 84.5}
+  - Tag: 2
+    Position: {x: 8.5, y: 0, z: 84.5}
+  - Tag: 2
+    Position: {x: -4.5, y: 0, z: 85.5}
+  - Tag: 2
+    Position: {x: -3.5, y: 0, z: 85.5}
+  - Tag: 2
+    Position: {x: -2.5, y: 0, z: 85.5}
+  - Tag: 2
+    Position: {x: -1.5, y: 0, z: 85.5}
+  - Tag: 2
+    Position: {x: -0.5, y: 0, z: 85.5}
+  - Tag: 2
+    Position: {x: 0.5, y: 0, z: 85.5}
+  - Tag: 2
+    Position: {x: 1.5, y: 0, z: 85.5}
+  - Tag: 2
+    Position: {x: 2.5, y: 0, z: 85.5}
+  - Tag: 2
+    Position: {x: 3.5, y: 0, z: 85.5}
+  - Tag: 2
+    Position: {x: 4.5, y: 0, z: 85.5}
+  - Tag: 2
+    Position: {x: 5.5, y: 0, z: 85.5}
+  - Tag: 2
+    Position: {x: 6.5, y: 0, z: 85.5}
+  - Tag: 2
+    Position: {x: 8.5, y: 0, z: 85.5}
+  - Tag: 2
+    Position: {x: -4.5, y: 0, z: 86.5}
+  - Tag: 2
+    Position: {x: -3.5, y: 0, z: 86.5}
+  - Tag: 2
+    Position: {x: -2.5, y: 0, z: 86.5}
+  - Tag: 2
+    Position: {x: -1.5, y: 0, z: 86.5}
+  - Tag: 2
+    Position: {x: -0.5, y: 0, z: 86.5}
+  - Tag: 2
+    Position: {x: 0.5, y: 0, z: 86.5}
+  - Tag: 2
+    Position: {x: 1.5, y: 0, z: 86.5}
+  - Tag: 2
+    Position: {x: 2.5, y: 0, z: 86.5}
+  - Tag: 2
+    Position: {x: 3.5, y: 0, z: 86.5}
+  - Tag: 2
+    Position: {x: 4.5, y: 0, z: 86.5}
+  - Tag: 2
+    Position: {x: 5.5, y: 0, z: 86.5}
+  - Tag: 2
+    Position: {x: 6.5, y: 0, z: 86.5}
+  - Tag: 2
+    Position: {x: 8.5, y: 0, z: 86.5}
+  - Tag: 2
+    Position: {x: -4.5, y: 0, z: 87.5}
+  - Tag: 2
+    Position: {x: -3.5, y: 0, z: 87.5}
+  - Tag: 2
+    Position: {x: -2.5, y: 0, z: 87.5}
+  - Tag: 2
+    Position: {x: -1.5, y: 0, z: 87.5}
+  - Tag: 2
+    Position: {x: -0.5, y: 0, z: 87.5}
+  - Tag: 2
+    Position: {x: 0.5, y: 0, z: 87.5}
+  - Tag: 2
+    Position: {x: 1.5, y: 0, z: 87.5}
+  - Tag: 2
+    Position: {x: 2.5, y: 0, z: 87.5}
+  - Tag: 2
+    Position: {x: 3.5, y: 0, z: 87.5}
+  - Tag: 2
+    Position: {x: 4.5, y: 0, z: 87.5}
+  - Tag: 2
+    Position: {x: 5.5, y: 0, z: 87.5}
+  - Tag: 2
+    Position: {x: 6.5, y: 0, z: 87.5}
+  - Tag: 2
+    Position: {x: 8.5, y: 0, z: 87.5}
+  - Tag: 2
+    Position: {x: -4.5, y: 0, z: 88.5}
+  - Tag: 2
+    Position: {x: -3.5, y: 0, z: 88.5}
+  - Tag: 2
+    Position: {x: 8.5, y: 0, z: 88.5}
+  - Tag: 2
+    Position: {x: -4.5, y: 0, z: 89.5}
+  - Tag: 2
+    Position: {x: -3.5, y: 0, z: 89.5}
+  - Tag: 2
+    Position: {x: -1.5, y: 0, z: 89.5}
+  - Tag: 2
+    Position: {x: -0.5, y: 0, z: 89.5}
+  - Tag: 2
+    Position: {x: 0.5, y: 0, z: 89.5}
+  - Tag: 2
+    Position: {x: 1.5, y: 0, z: 89.5}
+  - Tag: 2
+    Position: {x: 2.5, y: 0, z: 89.5}
+  - Tag: 2
+    Position: {x: 3.5, y: 0, z: 89.5}
+  - Tag: 2
+    Position: {x: 4.5, y: 0, z: 89.5}
+  - Tag: 2
+    Position: {x: 5.5, y: 0, z: 89.5}
+  - Tag: 2
+    Position: {x: 6.5, y: 0, z: 89.5}
+  - Tag: 2
+    Position: {x: 7.5, y: 0, z: 89.5}
+  - Tag: 2
+    Position: {x: 8.5, y: 0, z: 89.5}
+  - Tag: 2
+    Position: {x: -4.5, y: 0, z: 90.5}
+  - Tag: 2
+    Position: {x: -3.5, y: 0, z: 90.5}
+  - Tag: 2
+    Position: {x: -1.5, y: 0, z: 90.5}
+  - Tag: 2
+    Position: {x: -0.5, y: 0, z: 90.5}
+  - Tag: 2
+    Position: {x: 0.5, y: 0, z: 90.5}
+  - Tag: 2
+    Position: {x: 1.5, y: 0, z: 90.5}
+  - Tag: 2
+    Position: {x: 2.5, y: 0, z: 90.5}
+  - Tag: 2
+    Position: {x: 3.5, y: 0, z: 90.5}
+  - Tag: 2
+    Position: {x: 4.5, y: 0, z: 90.5}
+  - Tag: 2
+    Position: {x: 5.5, y: 0, z: 90.5}
+  - Tag: 2
+    Position: {x: 6.5, y: 0, z: 90.5}
+  - Tag: 2
+    Position: {x: 7.5, y: 0, z: 90.5}
+  - Tag: 2
+    Position: {x: 8.5, y: 0, z: 90.5}
+  - Tag: 2
+    Position: {x: -4.5, y: 0, z: 91.5}
+  - Tag: 2
+    Position: {x: -3.5, y: 0, z: 91.5}
+  - Tag: 2
+    Position: {x: -1.5, y: 0, z: 91.5}
+  - Tag: 2
+    Position: {x: -0.5, y: 0, z: 91.5}
+  - Tag: 2
+    Position: {x: 0.5, y: 0, z: 91.5}
+  - Tag: 2
+    Position: {x: 1.5, y: 0, z: 91.5}
+  - Tag: 2
+    Position: {x: 2.5, y: 0, z: 91.5}
+  - Tag: 2
+    Position: {x: 3.5, y: 0, z: 91.5}
+  - Tag: 2
+    Position: {x: 4.5, y: 0, z: 91.5}
+  - Tag: 2
+    Position: {x: 5.5, y: 0, z: 91.5}
+  - Tag: 2
+    Position: {x: 6.5, y: 0, z: 91.5}
+  - Tag: 2
+    Position: {x: 7.5, y: 0, z: 91.5}
+  - Tag: 2
+    Position: {x: 8.5, y: 0, z: 91.5}
+  - Tag: 2
+    Position: {x: -4.5, y: 0, z: 92.5}
+  - Tag: 2
+    Position: {x: -3.5, y: 0, z: 92.5}
+  - Tag: 2
+    Position: {x: -1.5, y: 0, z: 92.5}
+  - Tag: 2
+    Position: {x: -0.5, y: 0, z: 92.5}
+  - Tag: 2
+    Position: {x: 0.5, y: 0, z: 92.5}
+  - Tag: 2
+    Position: {x: 1.5, y: 0, z: 92.5}
+  - Tag: 2
+    Position: {x: 2.5, y: 0, z: 92.5}
+  - Tag: 2
+    Position: {x: 3.5, y: 0, z: 92.5}
+  - Tag: 2
+    Position: {x: 4.5, y: 0, z: 92.5}
+  - Tag: 2
+    Position: {x: 5.5, y: 0, z: 92.5}
+  - Tag: 2
+    Position: {x: 6.5, y: 0, z: 92.5}
+  - Tag: 2
+    Position: {x: 7.5, y: 0, z: 92.5}
+  - Tag: 2
+    Position: {x: 8.5, y: 0, z: 92.5}
+  - Tag: 2
+    Position: {x: -4.5, y: 0, z: 93.5}
+  - Tag: 2
+    Position: {x: -3.5, y: 0, z: 93.5}
+  - Tag: 2
+    Position: {x: 2.5, y: 0, z: 93.5}
+  - Tag: 2
+    Position: {x: 3.5, y: 0, z: 93.5}
+  - Tag: 2
+    Position: {x: 4.5, y: 0, z: 93.5}
+  - Tag: 2
+    Position: {x: 5.5, y: 0, z: 93.5}
+  - Tag: 2
+    Position: {x: 6.5, y: 0, z: 93.5}
+  - Tag: 2
+    Position: {x: 7.5, y: 0, z: 93.5}
+  - Tag: 2
+    Position: {x: 8.5, y: 0, z: 93.5}
+  - Tag: 2
+    Position: {x: -4.5, y: 0, z: 94.5}
+  - Tag: 2
+    Position: {x: -3.5, y: 0, z: 94.5}
+  - Tag: 2
+    Position: {x: -2.5, y: 0, z: 94.5}
+  - Tag: 2
+    Position: {x: -1.5, y: 0, z: 94.5}
+  - Tag: 2
+    Position: {x: -0.5, y: 0, z: 94.5}
+  - Tag: 2
+    Position: {x: 0.5, y: 0, z: 94.5}
+  - Tag: 2
+    Position: {x: 2.5, y: 0, z: 94.5}
+  - Tag: 2
+    Position: {x: 3.5, y: 0, z: 94.5}
+  - Tag: 2
+    Position: {x: 4.5, y: 0, z: 94.5}
+  - Tag: 2
+    Position: {x: 5.5, y: 0, z: 94.5}
+  - Tag: 2
+    Position: {x: 6.5, y: 0, z: 94.5}
+  - Tag: 2
+    Position: {x: 7.5, y: 0, z: 94.5}
+  - Tag: 2
+    Position: {x: 8.5, y: 0, z: 94.5}
+  - Tag: 2
+    Position: {x: -4.5, y: 0, z: 100.5}
+  - Tag: 2
+    Position: {x: -3.5, y: 0, z: 100.5}
+  - Tag: 2
+    Position: {x: -2.5, y: 0, z: 100.5}
+  - Tag: 2
+    Position: {x: -1.5, y: 0, z: 100.5}
+  - Tag: 2
+    Position: {x: -0.5, y: 0, z: 100.5}
+  - Tag: 2
+    Position: {x: 0.5, y: 0, z: 100.5}
+  - Tag: 2
+    Position: {x: 2.5, y: 0, z: 100.5}
+  - Tag: 2
+    Position: {x: 3.5, y: 0, z: 100.5}
+  - Tag: 2
+    Position: {x: 4.5, y: 0, z: 100.5}
+  - Tag: 2
+    Position: {x: 5.5, y: 0, z: 100.5}
+  - Tag: 2
+    Position: {x: 6.5, y: 0, z: 100.5}
+  - Tag: 2
+    Position: {x: 7.5, y: 0, z: 100.5}
+  - Tag: 2
+    Position: {x: -3.5, y: 0, z: 101.5}
+  - Tag: 2
+    Position: {x: -2.5, y: 0, z: 101.5}
+  - Tag: 2
+    Position: {x: -1.5, y: 0, z: 101.5}
+  - Tag: 2
+    Position: {x: -0.5, y: 0, z: 101.5}
+  - Tag: 2
+    Position: {x: 0.5, y: 0, z: 101.5}
+  - Tag: 2
+    Position: {x: 2.5, y: 0, z: 101.5}
+  - Tag: 2
+    Position: {x: 3.5, y: 0, z: 101.5}
+  - Tag: 2
+    Position: {x: 4.5, y: 0, z: 101.5}
+  - Tag: 2
+    Position: {x: 5.5, y: 0, z: 101.5}
+  - Tag: 2
+    Position: {x: 6.5, y: 0, z: 101.5}
+  - Tag: 2
+    Position: {x: 7.5, y: 0, z: 101.5}
+  - Tag: 2
+    Position: {x: 7.5, y: 0, z: 102.5}
+  - Tag: 2
+    Position: {x: -3.5, y: 0, z: 103.5}
+  - Tag: 2
+    Position: {x: -2.5, y: 0, z: 103.5}
+  - Tag: 2
+    Position: {x: -1.5, y: 0, z: 103.5}
+  - Tag: 2
+    Position: {x: -0.5, y: 0, z: 103.5}
+  - Tag: 2
+    Position: {x: 0.5, y: 0, z: 103.5}
+  - Tag: 2
+    Position: {x: 2.5, y: 0, z: 103.5}
+  - Tag: 2
+    Position: {x: 3.5, y: 0, z: 103.5}
+  - Tag: 2
+    Position: {x: 4.5, y: 0, z: 103.5}
+  - Tag: 2
+    Position: {x: 5.5, y: 0, z: 103.5}
+  - Tag: 2
+    Position: {x: 7.5, y: 0, z: 103.5}
+  - Tag: 2
+    Position: {x: -3.5, y: 0, z: 104.5}
+  - Tag: 2
+    Position: {x: -2.5, y: 0, z: 104.5}
+  - Tag: 2
+    Position: {x: -1.5, y: 0, z: 104.5}
+  - Tag: 2
+    Position: {x: -0.5, y: 0, z: 104.5}
+  - Tag: 2
+    Position: {x: 0.5, y: 0, z: 104.5}
+  - Tag: 2
+    Position: {x: 2.5, y: 0, z: 104.5}
+  - Tag: 2
+    Position: {x: 3.5, y: 0, z: 104.5}
+  - Tag: 2
+    Position: {x: 4.5, y: 0, z: 104.5}
+  - Tag: 2
+    Position: {x: 5.5, y: 0, z: 104.5}
+  - Tag: 2
+    Position: {x: 7.5, y: 0, z: 104.5}
+  - Tag: 2
+    Position: {x: -3.5, y: 0, z: 105.5}
+  - Tag: 2
+    Position: {x: -2.5, y: 0, z: 105.5}
+  - Tag: 2
+    Position: {x: -1.5, y: 0, z: 105.5}
+  - Tag: 2
+    Position: {x: -0.5, y: 0, z: 105.5}
+  - Tag: 2
+    Position: {x: 0.5, y: 0, z: 105.5}
+  - Tag: 2
+    Position: {x: 2.5, y: 0, z: 105.5}
+  - Tag: 2
+    Position: {x: 3.5, y: 0, z: 105.5}
+  - Tag: 2
+    Position: {x: 4.5, y: 0, z: 105.5}
+  - Tag: 2
+    Position: {x: 5.5, y: 0, z: 105.5}
+  - Tag: 2
+    Position: {x: 7.5, y: 0, z: 105.5}
+  - Tag: 2
+    Position: {x: -3.5, y: 0, z: 106.5}
+  - Tag: 2
+    Position: {x: -2.5, y: 0, z: 106.5}
+  - Tag: 2
+    Position: {x: -1.5, y: 0, z: 106.5}
+  - Tag: 2
+    Position: {x: -0.5, y: 0, z: 106.5}
+  - Tag: 2
+    Position: {x: 0.5, y: 0, z: 106.5}
+  - Tag: 2
+    Position: {x: 2.5, y: 0, z: 106.5}
+  - Tag: 2
+    Position: {x: 3.5, y: 0, z: 106.5}
+  - Tag: 2
+    Position: {x: 4.5, y: 0, z: 106.5}
+  - Tag: 2
+    Position: {x: 5.5, y: 0, z: 106.5}
+  - Tag: 2
+    Position: {x: 7.5, y: 0, z: 106.5}
+  - Tag: 2
+    Position: {x: -3.5, y: 0, z: 107.5}
+  - Tag: 2
+    Position: {x: -2.5, y: 0, z: 107.5}
+  - Tag: 2
+    Position: {x: -1.5, y: 0, z: 107.5}
+  - Tag: 2
+    Position: {x: -0.5, y: 0, z: 107.5}
+  - Tag: 2
+    Position: {x: 0.5, y: 0, z: 107.5}
+  - Tag: 2
+    Position: {x: 7.5, y: 0, z: 107.5}
+  - Tag: 2
+    Position: {x: -3.5, y: 0, z: 108.5}
+  - Tag: 2
+    Position: {x: -2.5, y: 0, z: 108.5}
+  - Tag: 2
+    Position: {x: -5.5, y: 0, z: 100.5}
+  - Tag: 2
+    Position: {x: -1.5, y: 0, z: 108.5}
+  - Tag: 2
+    Position: {x: -0.5, y: 0, z: 108.5}
+  - Tag: 2
+    Position: {x: 0.5, y: 0, z: 108.5}
+  - Tag: 2
+    Position: {x: 1.5, y: 0, z: 108.5}
+  - Tag: 0
+    Position: {x: 1.5, y: 0, z: 196.5}
+  - Tag: 2
+    Position: {x: 2.5, y: 0, z: 108.5}
+  - Tag: 2
+    Position: {x: 3.5, y: 0, z: 108.5}
+  - Tag: 2
+    Position: {x: 4.5, y: 0, z: 108.5}
+  - Tag: 2
+    Position: {x: 5.5, y: 0, z: 108.5}
+  - Tag: 2
+    Position: {x: 6.5, y: 0, z: 108.5}
+  - Tag: 2
+    Position: {x: 7.5, y: 0, z: 108.5}
+  - Tag: 2
+    Position: {x: -3.5, y: 0, z: 109.5}
+  - Tag: 2
+    Position: {x: -2.5, y: 0, z: 109.5}
+  - Tag: 2
+    Position: {x: -1.5, y: 0, z: 109.5}
+  - Tag: 2
+    Position: {x: -0.5, y: 0, z: 109.5}
+  - Tag: 2
+    Position: {x: 0.5, y: 0, z: 109.5}
+  - Tag: 2
+    Position: {x: 1.5, y: 0, z: 109.5}
+  - Tag: 2
+    Position: {x: 2.5, y: 0, z: 109.5}
+  - Tag: 2
+    Position: {x: 3.5, y: 0, z: 109.5}
+  - Tag: 2
+    Position: {x: 4.5, y: 0, z: 109.5}
+  - Tag: 2
+    Position: {x: 5.5, y: 0, z: 109.5}
+  - Tag: 2
+    Position: {x: 6.5, y: 0, z: 109.5}
+  - Tag: 2
+    Position: {x: 7.5, y: 0, z: 109.5}
+  - Tag: 2
+    Position: {x: -3.5, y: 0, z: 110.5}
+  - Tag: 2
+    Position: {x: 1.5, y: 0, z: 110.5}
+  - Tag: 2
+    Position: {x: 6.5, y: 0, z: 110.5}
+  - Tag: 2
+    Position: {x: 7.5, y: 0, z: 110.5}
+  - Tag: 2
+    Position: {x: 6.5, y: 0, z: 111.5}
+  - Tag: 0
+    Position: {x: 3.5, y: 0, z: 198.5}
+  - Tag: 2
+    Position: {x: 7.5, y: 0, z: 111.5}
+  - Tag: 0
+    Position: {x: -1.5, y: 0, z: 198.5}
+  - Tag: 0
+    Position: {x: 2.5, y: 0, z: 197.5}
+  - Tag: 2
+    Position: {x: -5.5, y: 0, z: 112.5}
+  - Tag: 2
+    Position: {x: -4.5, y: 0, z: 112.5}
+  - Tag: 0
+    Position: {x: 1.5, y: 0, z: 197.5}
+  - Tag: 2
+    Position: {x: -3.5, y: 0, z: 112.5}
+  - Tag: 0
+    Position: {x: 0.5, y: 0, z: 197.5}
+  - Tag: 2
+    Position: {x: 6.5, y: 0, z: 112.5}
+  - Tag: 2
+    Position: {x: 7.5, y: 0, z: 112.5}
+  - Tag: 0
+    Position: {x: -2.5, y: 0, z: 117.5}
+  - Tag: 0
+    Position: {x: -1.5, y: 0, z: 117.5}
+  - Tag: 0
+    Position: {x: -0.5, y: 0, z: 197.5}
+  - Tag: 0
+    Position: {x: -0.5, y: 0, z: 117.5}
+  - Tag: 0
+    Position: {x: 0.5, y: 0, z: 117.5}
+  - Tag: 0
+    Position: {x: 1.5, y: 0, z: 117.5}
+  - Tag: 0
+    Position: {x: 2.5, y: 0, z: 117.5}
+  - Tag: 0
+    Position: {x: 3.5, y: 0, z: 117.5}
+  - Tag: 0
+    Position: {x: 4.5, y: 0, z: 117.5}
+  - Tag: 0
+    Position: {x: 5.5, y: 0, z: 117.5}
+  - Tag: 0
+    Position: {x: -2.5, y: 0, z: 118.5}
+  - Tag: 0
+    Position: {x: -1.5, y: 0, z: 118.5}
+  - Tag: 0
+    Position: {x: -1.5, y: 0, z: 197.5}
+  - Tag: 0
+    Position: {x: -0.5, y: 0, z: 118.5}
+  - Tag: 0
+    Position: {x: 0.5, y: 0, z: 118.5}
+  - Tag: 0
+    Position: {x: 4.5, y: 0, z: 197.5}
+  - Tag: 0
+    Position: {x: 2.5, y: 0, z: 118.5}
+  - Tag: 0
+    Position: {x: 3.5, y: 0, z: 197.5}
+  - Tag: 0
+    Position: {x: 3.5, y: 0, z: 118.5}
+  - Tag: 0
+    Position: {x: 4.5, y: 0, z: 118.5}
+  - Tag: 0
+    Position: {x: 5.5, y: 0, z: 118.5}
+  - Tag: 0
+    Position: {x: 2.5, y: 0, z: 198.5}
+  - Tag: 0
+    Position: {x: -2.5, y: 0, z: 119.5}
+  - Tag: 0
+    Position: {x: -1.5, y: 0, z: 119.5}
+  - Tag: 0
+    Position: {x: -0.5, y: 0, z: 119.5}
+  - Tag: 0
+    Position: {x: 0.5, y: 0, z: 119.5}
+  - Tag: 0
+    Position: {x: 1.5, y: 0, z: 119.5}
+  - Tag: 0
+    Position: {x: 1.5, y: 0, z: 198.5}
+  - Tag: 0
+    Position: {x: 2.5, y: 0, z: 119.5}
+  - Tag: 0
+    Position: {x: 3.5, y: 0, z: 119.5}
+  - Tag: 0
+    Position: {x: 0.5, y: 0, z: 198.5}
+  - Tag: 0
+    Position: {x: 4.5, y: 0, z: 119.5}
+  - Tag: 0
+    Position: {x: -0.5, y: 0, z: 198.5}
+  - Tag: 0
+    Position: {x: 5.5, y: 0, z: 119.5}
+  - Tag: 0
+    Position: {x: 1.5, y: 0, z: 116.5}
+  - Tag: 0
+    Position: {x: 1.5, y: 0, z: 120.5}
+  - Tag: 6
+    Position: {x: 1.5, y: 0, z: 185.5}
+  - Tag: 6
+    Position: {x: 1.5, y: 0, z: 186.5}
+  - Tag: 6
+    Position: {x: 1.5, y: 0, z: 187.5}
+  - Tag: 6
+    Position: {x: 1.5, y: 0, z: 188.5}
+  - Tag: 6
+    Position: {x: 1.5, y: 0, z: 189.5}
+  - Tag: 6
+    Position: {x: 1.5, y: 0, z: 190.5}
+  - Tag: 6
+    Position: {x: 1.5, y: 0, z: 191.5}
+  - Tag: 6
+    Position: {x: 1.5, y: 0, z: 192.5}
+  - Tag: 6
+    Position: {x: 1.5, y: 0, z: 193.5}
+  - Tag: 6
+    Position: {x: 1.5, y: 0, z: 194.5}
+  - Tag: 6
+    Position: {x: 1.5, y: 0, z: 195.5}
+  - Tag: 9
+    Position: {x: 1.5, y: 0, z: 199.5}
+  - Tag: 2
+    Position: {x: 2.5, y: 0, z: 196.5}
+  - Tag: 2
+    Position: {x: 3.5, y: 0, z: 196.5}
+  - Tag: 2
+    Position: {x: 4.5, y: 0, z: 196.5}
+  - Tag: 2
+    Position: {x: 4.5, y: 0, z: 201.5}
+  - Tag: 2
+    Position: {x: -2.5, y: 0, z: 201.5}
+  - Tag: 2
+    Position: {x: -1.5, y: 0, z: 201.5}
+  - Tag: 2
+    Position: {x: -0.5, y: 0, z: 201.5}
+  - Tag: 2
+    Position: {x: 0.5, y: 0, z: 201.5}
+  - Tag: 2
+    Position: {x: 1.5, y: 0, z: 201.5}
+  - Tag: 2
+    Position: {x: 2.5, y: 0, z: 201.5}
+  - Tag: 2
+    Position: {x: 3.5, y: 0, z: 201.5}
+  - Tag: 2
+    Position: {x: -2.5, y: 0, z: 196.5}
+  - Tag: 2
+    Position: {x: -2.5, y: 0, z: 197.5}
+  - Tag: 2
+    Position: {x: -2.5, y: 0, z: 198.5}
+  - Tag: 2
+    Position: {x: -2.5, y: 0, z: 199.5}
+  - Tag: 2
+    Position: {x: -2.5, y: 0, z: 200.5}
+  - Tag: 2
+    Position: {x: -1.5, y: 0, z: 196.5}
+  - Tag: 2
+    Position: {x: -5.5, y: 0, z: 111.5}
+  - Tag: 2
+    Position: {x: -0.5, y: 0, z: 196.5}
+  - Tag: 2
+    Position: {x: -5.5, y: 0, z: 110.5}
+  - Tag: 2
+    Position: {x: 0.5, y: 0, z: 196.5}
+  - Tag: 2
+    Position: {x: -5.5, y: 0, z: 109.5}
+  - Tag: 2
+    Position: {x: 5.5, y: 0, z: 196.5}
+  - Tag: 2
+    Position: {x: 5.5, y: 0, z: 197.5}
+  - Tag: 2
+    Position: {x: 5.5, y: 0, z: 198.5}
+  - Tag: 2
+    Position: {x: -5.5, y: 0, z: 101.5}
+  - Tag: 2
+    Position: {x: 5.5, y: 0, z: 199.5}
+  - Tag: 2
+    Position: {x: -5.5, y: 0, z: 102.5}
+  - Tag: 2
+    Position: {x: 5.5, y: 0, z: 200.5}
+  - Tag: 2
+    Position: {x: -5.5, y: 0, z: 103.5}
+  - Tag: 2
+    Position: {x: 5.5, y: 0, z: 201.5}
+  - Tag: 2
+    Position: {x: -5.5, y: 0, z: 104.5}
+  - Tag: 0
+    Position: {x: -1.5, y: 0, z: 200.5}
+  - Tag: 2
+    Position: {x: -5.5, y: 0, z: 105.5}
+  - Tag: 0
+    Position: {x: -0.5, y: 0, z: 199.5}
+  - Tag: 2
+    Position: {x: -5.5, y: 0, z: 106.5}
+  - Tag: 2
+    Position: {x: -5.5, y: 0, z: 107.5}
+  - Tag: 2
+    Position: {x: -5.5, y: 0, z: 108.5}
+  - Tag: 2
+    Position: {x: -4.5, y: 0, z: 101.5}
+  - Tag: 5
+    Position: {x: -4.5, y: 0, z: 102.5}
+  - Tag: 5
+    Position: {x: -4.5, y: 0, z: 111.5}
+  - Tag: 3
+    Position: {x: -4.5, y: 0, z: 110.5}
+  - Tag: 3
+    Position: {x: -4.5, y: 0, z: 109.5}
+  - Tag: 3
+    Position: {x: -4.5, y: 0, z: 108.5}
+  - Tag: 3
+    Position: {x: -4.5, y: 0, z: 107.5}
+  - Tag: 3
+    Position: {x: -4.5, y: 0, z: 106.5}
+  - Tag: 3
+    Position: {x: -4.5, y: 0, z: 105.5}
+  - Tag: 3
+    Position: {x: -4.5, y: 0, z: 104.5}
+  - Tag: 3
+    Position: {x: -4.5, y: 0, z: 103.5}
+  - Tag: 0
+    Position: {x: 4.5, y: 0, z: 198.5}
+  - Tag: 0
+    Position: {x: -1.5, y: 0, z: 199.5}
+  - Tag: 0
+    Position: {x: 0.5, y: 0, z: 199.5}
+  - Tag: 0
+    Position: {x: 2.5, y: 0, z: 199.5}
+  - Tag: 0
+    Position: {x: 3.5, y: 0, z: 199.5}
+  - Tag: 0
+    Position: {x: 4.5, y: 0, z: 199.5}
+  - Tag: 0
+    Position: {x: -0.5, y: 0, z: 200.5}
+  - Tag: 0
+    Position: {x: 0.5, y: 0, z: 200.5}
+  - Tag: 0
+    Position: {x: 1.5, y: 0, z: 200.5}
+  - Tag: 0
+    Position: {x: 2.5, y: 0, z: 200.5}
+  - Tag: 0
+    Position: {x: 3.5, y: 0, z: 200.5}
+  - Tag: 0
+    Position: {x: 4.5, y: 0, z: 200.5}
+  - Tag: 3
+    Position: {x: 1.5, y: 0, z: 100.5}

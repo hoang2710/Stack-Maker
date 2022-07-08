@@ -14,22 +14,6 @@ public class StackMinus : MonoBehaviour, IPooledObject
         Col.enabled = true;
         GoldenPlate.SetActive(false);
     }
-    void Start()
-    {
-        GameManager.OnGameStateChanged += GameManagerOnGameStateChanged;
-    }
-
-    private void OnDestroy()
-    {
-        GameManager.OnGameStateChanged -= GameManagerOnGameStateChanged;
-    }
-    private void GameManagerOnGameStateChanged(GameManager.GameState state)
-    {
-        if (state == GameManager.GameState.Loading)
-        {
-            this.gameObject.SetActive(false);
-        }
-    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))

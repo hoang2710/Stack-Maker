@@ -46,7 +46,7 @@ public class PrefabManager : MonoBehaviour
         }
     }
 
-    public GameObject SpawnFromPool(ObjectType tag, Vector3 spawnPos, Quaternion rotation)
+    public GameObject PopFromPool(ObjectType tag, Vector3 spawnPos, Quaternion rotation)
     {
         if (!poolDictionary.ContainsKey(tag))
         {

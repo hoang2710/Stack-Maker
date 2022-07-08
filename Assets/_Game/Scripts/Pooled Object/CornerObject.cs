@@ -14,30 +14,19 @@ public class CornerObject : MonoBehaviour, IPooledObject
     [SerializeField]
     private float stackHeight = 0.3f;
     public Transform BlockTrans;
-    private Vector3 localStackPosition;
+    private Vector3 localOffset;
 
     public void OnObjectSpawn()
     {
         SetLockDirection();
         StackTrans.parent = BlockTrans;
-        StackTrans.localPosition = localStackPosition;
+        StackTrans.position = BlockTrans.position + localOffset;
     }
-    private void Start()
+    private void Awake()
     {
-        localStackPosition = StackTrans.localPosition;
-        GameManager.OnGameStateChanged += GameManagerOnGameStateChanged;
+        localOffset = StackTrans.position - BlockTrans.position;
     }
-    private void OnDestroy()
-    {
-        GameManager.OnGameStateChanged -= GameManagerOnGameStateChanged;
-    }
-    private void GameManagerOnGameStateChanged(GameManager.GameState state)
-    {
-        if (state == GameManager.GameState.Loading)
-        {
-            this.gameObject.SetActive(false);
-        }
-    }
+
     public void SetLockDirection()
     {
         isUpLock = false;

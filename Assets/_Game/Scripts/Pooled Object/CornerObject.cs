@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class CornerObject : MonoBehaviour, IPooledObject
 {
-    public bool isUpLock = false;
-    public bool isDownLock = false;
-    public bool isLeftLock = false;
-    public bool isRightLock = false;
+    [SerializeField]
+    private protected bool isUpLock = false;
+    [SerializeField]
+    private protected bool isDownLock = false;
+    [SerializeField]
+    private protected bool isLeftLock = false;
+    [SerializeField]
+    private protected bool isRightLock = false;
     public Transform CornerBlockObject;
     private bool isStackAvailable = true;
     public Transform StackTrans;
@@ -75,7 +79,7 @@ public class CornerObject : MonoBehaviour, IPooledObject
                     StackTrans.position = player.StackRoot.position;
                     StackTrans.parent = player.StackParent;
 
-                    player.Anim.SetInteger(ConstValue.PLAYER_ANIM, 1);
+                    player.Anim.SetInteger(ConstValue.PLAYER_ANIM, ConstValue.PLAYER_ANIM_JUMP);
 
                     isStackAvailable = false;
                 }

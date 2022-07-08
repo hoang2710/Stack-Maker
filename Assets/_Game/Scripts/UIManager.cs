@@ -65,7 +65,6 @@ public class UIManager : MonoBehaviour
     public void UpdateGoldBonus()
     {
         int goldCount = LevelManager.Instance.GetGoldBonus();
-        Debug.Log(LevelManager.Instance.CurLevel + "   " + goldCount);
         GoldBonusText.text = "+" + goldCount.ToString();
     }
     public void OnClickSettingButton()

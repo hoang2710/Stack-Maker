@@ -5,6 +5,5 @@ using UnityEngine;
 public class ScriptableObjectLevel : ScriptableObject
 {
     public LevelManager.Level level;
-    [SerializeField]
     public List<TileData> tileList;
 }

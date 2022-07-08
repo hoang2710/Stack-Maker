@@ -37,10 +37,11 @@ public class InputManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
+    }
+    private void Start()
+    {
         GameManager.OnGameStateChanged += GameManagerOnGameStateChanged;
     }
-
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -59,27 +60,34 @@ public class InputManager : MonoBehaviour
             isSwipe = false;
             if (!isInputLock)
             {
+                isMove = false;
+
                 if ((mouseUpPos - mouseDownPos).magnitude > sensitiveThreshold)
                 {
                     Vector2 dir = (mouseUpPos - mouseDownPos).normalized;
+
                     if (dir.x > swipeDetectTriggerLine && !isRightLock)
                     {
                         TriggerInput(InputType.Right);
+                        isMove = true;
                     }
                     else
                     if (dir.x < -swipeDetectTriggerLine && !isLeftLock)
                     {
                         TriggerInput(InputType.Left);
+                        isMove = true;
                     }
                     else
                     if (dir.y > swipeDetectTriggerLine && !isUpLock)
                     {
                         TriggerInput(InputType.Up);
+                        isMove = true;
                     }
                     else
                     if (dir.y < -swipeDetectTriggerLine && !isDownLock)
                     {
                         TriggerInput(InputType.Down);
+                        isMove = true;
                     }
                 }
 
@@ -90,27 +98,31 @@ public class InputManager : MonoBehaviour
             }
         }
     }
-
+    private void OnDestroy()
+    {
+        GameManager.OnGameStateChanged -= GameManagerOnGameStateChanged;
+    }
     private void GameManagerOnGameStateChanged(GameManager.GameState state)
     {
-        if (state == GameManager.GameState.Play)
+        switch (state)
         {
-            isInputLock = false;
-        }
-        if (state == GameManager.GameState.ResultPhase)
-        {
-            isUpLock = false;
-            isDownLock = false;
-            isLeftLock = false;
-            isRightLock = false;
+            case GameManager.GameState.Play:
+                isInputLock = false;
+                break;
+            case GameManager.GameState.ResultPhase:
+                isUpLock = false;
+                isDownLock = false;
+                isLeftLock = false;
+                isRightLock = false;
+                break;
+            default:
+                break;
         }
     }
-
     public void TriggerInput(InputType input)
     {
         OnInputUpdate?.Invoke(input);
     }
-
     public void UpdateDirectionLock(bool up, bool down, bool left, bool right)
     {
         isUpLock = up;
@@ -118,7 +130,6 @@ public class InputManager : MonoBehaviour
         isLeftLock = left;
         isRightLock = right;
     }
-
     public void UpdateInputLock(bool val)
     {
         isInputLock = val;

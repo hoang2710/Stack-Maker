@@ -108,7 +108,7 @@ public class Player : MonoBehaviour
         {
             case GameManager.GameState.EndLevel:
                 StopCoroutine(coroutine);
-                Anim.SetInteger(ConstValue.PLAYER_ANIM, 2);
+                Anim.SetInteger(ConstValue.PLAYER_ANIM, ConstValue.PLAYER_ANIM_END_LEVEL_DANCE);
                 break;
             case GameManager.GameState.PreEndLevel:
                 moveSpeed = moveSpeedPreEnd;
@@ -129,7 +129,7 @@ public class Player : MonoBehaviour
         while (true)
         {
             for (int i = 0; i < 3; i++) yield return null;
-            Anim.SetInteger(ConstValue.PLAYER_ANIM, 0);
+            Anim.SetInteger(ConstValue.PLAYER_ANIM, ConstValue.PLAYER_ANIM_IDLE);
         }
     }
 }

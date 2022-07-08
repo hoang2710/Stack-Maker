@@ -20,11 +20,14 @@ public class Chest : MonoBehaviour, IPooledObject
         {
             Player player = other.GetComponent<Player>();
 
-            player.MoveDir = Vector3.zero;
-            player.transform.position = StayPosition.position;
+            if (player != null)
+            {
+                player.MoveDir = Vector3.zero;
+                player.transform.position = StayPosition.position;
 
-            GameManager.Instance.ChangeGameState(GameManager.GameState.EndLevel);
-            StartCoroutine(DelayOpenChest());
+                GameManager.Instance.ChangeGameState(GameManager.GameState.EndLevel);
+                StartCoroutine(DelayOpenChest());
+            }
         }
     }
     IEnumerator DelayOpenChest()

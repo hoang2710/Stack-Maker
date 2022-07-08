@@ -18,12 +18,11 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
     }
     void Start()
     {
-        // Screen.SetResolution(1080, 1920, false);
-        Screen.SetResolution(480, 854, false);
+        Screen.SetResolution(1080, 1920, false);
+        // Screen.SetResolution(480, 854, false);
         Debug.Log(Screen.currentResolution.width + "   " + Screen.currentResolution.height);
 
         StartCoroutine(DelayChangeGameState(GameState.Loading, 1f));

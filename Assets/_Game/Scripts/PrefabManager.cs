@@ -13,7 +13,6 @@ public class PrefabManager : MonoBehaviour
     }
     public List<Pool> Pools;
     public Dictionary<ObjectType, Queue<GameObject>> poolDictionary = new Dictionary<ObjectType, Queue<GameObject>>();
-
     public static PrefabManager Instance { get; private set; }
     private void Awake()
     {
@@ -30,7 +29,6 @@ public class PrefabManager : MonoBehaviour
 
     void Start()
     {
-
         foreach (Pool pool in Pools)
         {
             Queue<GameObject> objQueue = new Queue<GameObject>();

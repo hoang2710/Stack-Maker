@@ -6,7 +6,14 @@ using UnityEditor;
 
 public class LevelManager : MonoBehaviour
 {
-    public Level CurLevel = Level.Level_1;
+    private Level curLevel = Level.Level_1;
+    public Level CurLevel
+    {
+        get
+        {
+            return curLevel;
+        }
+    }
     public static LevelManager Instance { get; private set; }
     private void Awake()
     {
@@ -28,7 +35,6 @@ public class LevelManager : MonoBehaviour
     {
         GameManager.OnGameStateChanged -= GameManagerOnGameStateChanged;
     }
-
     private void GameManagerOnGameStateChanged(GameManager.GameState state)
     {
         switch (state)
@@ -43,7 +49,7 @@ public class LevelManager : MonoBehaviour
     public int GetGoldBonus()
     {
         int goldCount = 0;
-        switch (CurLevel)
+        switch (curLevel)
         {
             case Level.Level_1:
                 goldCount = ConstValue.GOLD_AT_LVL_1;
@@ -71,16 +77,16 @@ public class LevelManager : MonoBehaviour
     }
     public void NextLevel()
     {
-        CurLevel++;
-        if ((int)CurLevel == 6)
+        curLevel++;
+        if ((int)curLevel == 6)
         {
-            CurLevel = Level.Level_1;
+            curLevel = Level.Level_1;
         }
         GameManager.Instance.ChangeGameState(GameManager.GameState.Loading);
     }
     public void LoadLevel()
     {
-        var level = Resources.Load<ScriptableObjectLevel>($"LevelData/level {(int)CurLevel}");
+        var level = Resources.Load<ScriptableObjectLevel>($"LevelData/level {(int)curLevel}");
 
         if (level != null)
         {

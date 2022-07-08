@@ -118,6 +118,7 @@ public class Player : MonoBehaviour
                 gold += goldBonus;
                 break;
             case GameManager.GameState.Play:
+                StartCoroutine(coroutine);
                 UIManager.Instance.UpdatePlayerGoldUI(gold);
                 break;
             default:

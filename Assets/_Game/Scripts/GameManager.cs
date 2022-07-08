@@ -63,7 +63,7 @@ public class GameManager : MonoBehaviour
     public void OnGameStateLoading()
     {
         Debug.Log("GameStateLoading");
-        StartCoroutine(DelayChangeGameState(GameState.Play, 2f));
+        StartCoroutine(DelayChangeGameState(GameState.Play, 1f));
     }
     public void OnGameStatePlay()
     {

@@ -67,11 +67,16 @@ public class LevelManager : MonoBehaviour
     }
     public void PlayAgain()
     {
-
+        GameManager.Instance.ChangeGameState(GameManager.GameState.Loading);
     }
     public void NextLevel()
     {
-
+        CurLevel++;
+        if ((int)CurLevel == 6)
+        {
+            CurLevel = Level.Level_1;
+        }
+        GameManager.Instance.ChangeGameState(GameManager.GameState.Loading);
     }
     public void LoadLevel()
     {
@@ -85,7 +90,6 @@ public class LevelManager : MonoBehaviour
 
             foreach (var item in level.tileList)
             {
-                // Debug.Log(item.Tag);
                 PrefabManager.Instance.PopFromPool(item.Tag, item.Position, Quaternion.identity);
             }
         }
@@ -134,9 +138,9 @@ public class LevelManager : MonoBehaviour
             Debug.Log(tileData.Tag + "  " + tileData.Position);
             tileDatas.Add(tileData);
         }
-        Debug.Log(tileDatas.Count);
+
         newLevel.tileList = tileDatas;
-        Debug.Log(newLevel.tileList.Count + " tileList");
+
         SaveToAsset(newLevel);
 
     }
@@ -169,13 +173,22 @@ public class LevelManager : MonoBehaviour
                     case PrefabManager.ObjectType.StackBlock:
                         stackCount++;
                         break;
-                    case PrefabManager.ObjectType.BridgeBlock:
+                    case PrefabManager.ObjectType.BridgeBlockVertical:
                         stackMinusCount++;
                         break;
-                    case PrefabManager.ObjectType.WideBrigeBlock:
+                    case PrefabManager.ObjectType.WideBrigeBlockVertical:
+                        stackMinusCount++;
+                        break;
+                    case PrefabManager.ObjectType.BridgeBlockHorizontal:
+                        stackMinusCount++;
+                        break;
+                    case PrefabManager.ObjectType.WideBrigeBlockHorizontal:
                         stackMinusCount++;
                         break;
                     case PrefabManager.ObjectType.CornerBlock:
+                        stackCount++;
+                        break;
+                    case PrefabManager.ObjectType.BounceBlock:
                         stackCount++;
                         break;
                     default:
@@ -184,7 +197,7 @@ public class LevelManager : MonoBehaviour
             }
         }
 
-        Debug.Log(stackCount - stackMinusCount);
+        Debug.Log("Need to build " + (stackCount - stackMinusCount) + " more stack minus");
     }
     private void SaveToAsset(ScriptableObjectLevel level)
     {

@@ -58,7 +58,6 @@ public class InputManager : MonoBehaviour
             isSwipe = false;
             if (!isInputLock)
             {
-                // Debug.Log((mouseUpPos - mouseDownPos).magnitude + "   " + mouseDownPos + "   " + mouseUpPos +"  " + (mouseUpPos - mouseDownPos));
                 if ((mouseUpPos - mouseDownPos).magnitude > sensitiveThreshold)
                 {
                     Vector2 dir = (mouseUpPos - mouseDownPos).normalized;
@@ -82,6 +81,8 @@ public class InputManager : MonoBehaviour
                         TriggerInput(InputType.Down);
                     }
                 }
+
+                isInputLock = true;
             }
         }
     }

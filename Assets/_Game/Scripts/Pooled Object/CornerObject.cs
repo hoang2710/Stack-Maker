@@ -11,14 +11,16 @@ public class CornerObject : MonoBehaviour, IPooledObject
     public Transform CornerBlockObject;
     private bool isStackAvailable = true;
     public Transform StackTrans;
+    public GameObject StackObject;
     [SerializeField]
     private float stackHeight = 0.3f;
     public Transform BlockTrans;
     private Vector3 localOffset;
 
-    public void OnObjectSpawn()
+    public virtual void OnObjectSpawn()
     {
         StartCoroutine(DelaySetLockDir());
+        StackObject.SetActive(true);
         StackTrans.parent = BlockTrans;
         StackTrans.position = BlockTrans.position + localOffset;
     }
@@ -31,19 +33,19 @@ public class CornerObject : MonoBehaviour, IPooledObject
     {
         RaycastHit hit;
         Debug.Log("set value  " + BlockTrans.position);
-        if (Physics.Raycast(BlockTrans.position, Vector3.forward,out hit, 1f, ConstValue.WALL_BLOCK_LAYER_MASK))
+        if (Physics.Raycast(BlockTrans.position, Vector3.forward, out hit, 1f, ConstValue.WALL_BLOCK_LAYER_MASK))
         {
             isUpLock = true; Debug.Log("up " + hit.transform.name);
         }
-        if (Physics.Raycast(BlockTrans.position, Vector3.back,out hit, 1f, ConstValue.WALL_BLOCK_LAYER_MASK))
+        if (Physics.Raycast(BlockTrans.position, Vector3.back, out hit, 1f, ConstValue.WALL_BLOCK_LAYER_MASK))
         {
             isDownLock = true; Debug.Log("down " + hit.transform.name);
         }
-        if (Physics.Raycast(BlockTrans.position, Vector3.left,out hit, 1f, ConstValue.WALL_BLOCK_LAYER_MASK))
+        if (Physics.Raycast(BlockTrans.position, Vector3.left, out hit, 1f, ConstValue.WALL_BLOCK_LAYER_MASK))
         {
             isLeftLock = true; Debug.Log("left " + hit.transform.name);
         }
-        if (Physics.Raycast(BlockTrans.position, Vector3.right,out hit, 1f, ConstValue.WALL_BLOCK_LAYER_MASK))
+        if (Physics.Raycast(BlockTrans.position, Vector3.right, out hit, 1f, ConstValue.WALL_BLOCK_LAYER_MASK))
         {
             isRightLock = true; Debug.Log("right " + hit.transform.name);
         }
@@ -69,17 +71,18 @@ public class CornerObject : MonoBehaviour, IPooledObject
 
                     player.Anim.SetInteger(ConstValue.PLAYER_ANIM, 1);
 
-                    Debug.Log("stack plus");
                     isStackAvailable = false;
                 }
             }
 
             InputManager.Instance.UpdateDirectionLock(isUpLock, isDownLock, isLeftLock, isRightLock);
+            InputManager.Instance.UpdateInputLock(false);
         }
     }
 
-    IEnumerator DelaySetLockDir(){
-        yield return new WaitForSeconds(1f);
+    IEnumerator DelaySetLockDir()
+    {
+        yield return new WaitForSeconds(0.5f);
         SetLockDirection();
     }
 }

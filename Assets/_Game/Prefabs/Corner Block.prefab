@@ -136,6 +136,7 @@ MonoBehaviour:
   isRightLock: 0
   CornerBlockObject: {fileID: 2926731268346883394}
   StackTrans: {fileID: 4001877582132777}
+  StackObject: {fileID: 1494017965046362}
   stackHeight: 0.3
   BlockTrans: {fileID: 4607530174121408886}
 --- !u!65 &1028118429009557522
@@ -163,7 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 278fa1ee2f904b4458dc2ea3e433d90c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Tag: 5
+  Tag: 6
   Position: {x: 0, y: 0, z: 0}
 --- !u!54 &2284133425243286380
 Rigidbody:

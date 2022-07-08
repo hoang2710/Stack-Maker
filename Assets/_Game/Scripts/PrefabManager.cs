@@ -79,9 +79,11 @@ public class PrefabManager : MonoBehaviour
         PlayerBlock,
         WallBlock,
         StackBlock,
-        BridgeBlock,
+        BridgeBlockVertical,
+        BridgeBlockHorizontal,
         CornerBlock,
-        WideBrigeBlock,
+        WideBrigeBlockVertical,
+        WideBrigeBlockHorizontal,
         BounceBlock,
         FinishLine,
         ChestBlock

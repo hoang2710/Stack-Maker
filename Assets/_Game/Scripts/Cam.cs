@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//NOTE: class not used
 public class Cam : MonoBehaviour
 {
     private Transform playerTrans;

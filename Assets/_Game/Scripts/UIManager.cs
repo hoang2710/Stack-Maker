@@ -73,12 +73,9 @@ public class UIManager : MonoBehaviour
     public void OnClickPlayAgainButton()
     {
         LevelManager.Instance.PlayAgain();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        GameManager.Instance.ChangeGameState(GameManager.GameState.Play);
     }
     public void OnClickNextLevelButton()
     {
         LevelManager.Instance.NextLevel();
-        GameManager.Instance.ChangeGameState(GameManager.GameState.Play);
     }
 }

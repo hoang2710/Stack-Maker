@@ -211,7 +211,7 @@ GameObject:
   - component: {fileID: 3507890522035362089}
   - component: {fileID: -250445263999123891}
   m_Layer: 0
-  m_Name: Wide Bridge Block
+  m_Name: Vertical Wide Bridge Block
   m_TagString: Tile Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -272,7 +272,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 278fa1ee2f904b4458dc2ea3e433d90c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Tag: 6
+  Tag: 7
   Position: {x: 0, y: 0, z: 0}
 --- !u!1 &2953533797781443287
 GameObject:

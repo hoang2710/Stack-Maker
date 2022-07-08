@@ -8,11 +8,14 @@ public class Stack : MonoBehaviour, IPooledObject
     private float stackHeight = 0.3f;
     public Collider Col;
     public Transform StackTrans;
+    public GameObject StackObject;
     public Transform BlockTrans;
     private Vector3 localOffset;
 
     public void OnObjectSpawn()
     {
+        StackObject.SetActive(true);
+        Col.enabled = true;
         StackTrans.parent = BlockTrans;
         StackTrans.position = BlockTrans.position + localOffset;
     }

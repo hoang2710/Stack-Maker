@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 3182752110812137217}
   - component: {fileID: 6269400246450609658}
   m_Layer: 0
-  m_Name: Bridge Block
+  m_Name: Vertical Bridge Block
   m_TagString: Tile Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

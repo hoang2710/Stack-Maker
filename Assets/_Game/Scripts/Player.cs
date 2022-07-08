@@ -42,7 +42,6 @@ public class Player : MonoBehaviour
         set
         {
             gold = value;
-            UIManager.Instance.UpdatePlayerGoldUI(value);
         }
     }
 
@@ -118,7 +117,9 @@ public class Player : MonoBehaviour
             case GameManager.GameState.ResultPhase:
                 int goldBonus = LevelManager.Instance.GetGoldBonus();
                 gold += goldBonus;
-                Debug.Log(gold);
+                break;
+            case GameManager.GameState.Play:
+                UIManager.Instance.UpdatePlayerGoldUI(gold);
                 break;
             default:
                 break;

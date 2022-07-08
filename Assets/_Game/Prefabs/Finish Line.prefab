@@ -21990,7 +21990,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 278fa1ee2f904b4458dc2ea3e433d90c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Tag: 8
+  Tag: 10
   Position: {x: 0, y: 0, z: 0}
 --- !u!1 &4665742350110009211
 GameObject:

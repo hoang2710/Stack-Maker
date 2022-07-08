@@ -1381,14 +1381,14 @@ MonoBehaviour:
   - Tag: 2
     Position: {x: 5.5, y: 0, z: 13.5}
   - Tag: 2
-    Position: {x: 7.5, y: 0, z: 13.5}
-  - Tag: 2
     Position: {x: 6.5, y: 0, z: 13.5}
+  - Tag: 2
+    Position: {x: 7.5, y: 0, z: 13.5}
   - Tag: 3
     Position: {x: 3.5, y: 0, z: 11.5}
-  - Tag: 3
-    Position: {x: 3.5, y: 0, z: 12.5}
   - Tag: 2
     Position: {x: 8.5, y: 0, z: 13.5}
+  - Tag: 3
+    Position: {x: 3.5, y: 0, z: 12.5}
   - Tag: 3
     Position: {x: 3.5, y: 0, z: 13.5}

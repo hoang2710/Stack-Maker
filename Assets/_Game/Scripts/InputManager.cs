@@ -115,6 +115,9 @@ public class InputManager : MonoBehaviour
                 isLeftLock = false;
                 isRightLock = false;
                 break;
+            case GameManager.GameState.Loading:
+                isInputLock = true;
+                break;
             default:
                 break;
         }

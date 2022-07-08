@@ -10,9 +10,18 @@ public class PlayerBlock : CornerObject
     public override void OnObjectSpawn()
     {
         PlayerTrans.position = BlockTrans.position + localPlayerOffset;
+        StartCoroutine(DelaySetLockDir());
     }
     private void Awake()
     {
         localPlayerOffset = PlayerTrans.position - BlockTrans.position;
+    }
+    IEnumerator DelaySetLockDir()
+    {
+        yield return new WaitForSeconds(0.5f);
+        SetLockDirection();
+        
+        InputManager.Instance.UpdateDirectionLock(isUpLock, isDownLock, isLeftLock, isRightLock);
+        InputManager.Instance.UpdateInputLock(false);
     }
 }

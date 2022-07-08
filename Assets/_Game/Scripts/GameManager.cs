@@ -22,9 +22,9 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
-        Screen.SetResolution(1080, 1920, false);
+        // Screen.SetResolution(1080, 1920, false);
+        Screen.SetResolution(480, 854, false);
         Debug.Log(Screen.currentResolution.width + "   " + Screen.currentResolution.height);
-        Screen.autorotateToPortrait = true;
 
         StartCoroutine(DelayChangeGameState(GameState.Loading, 1f));
     }

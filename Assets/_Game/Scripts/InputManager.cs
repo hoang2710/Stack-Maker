@@ -21,6 +21,7 @@ public class InputManager : MonoBehaviour
     private bool isRightLock = false;
     [SerializeField]
     private bool isInputLock = false;
+    private bool isMove = false;
 
 
     public static InputManager Instance { get; private set; }
@@ -82,7 +83,10 @@ public class InputManager : MonoBehaviour
                     }
                 }
 
-                isInputLock = true;
+                if (isMove)
+                {
+                    isInputLock = true;
+                }
             }
         }
     }

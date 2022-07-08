@@ -79,7 +79,6 @@ public class Player : MonoBehaviour
         switch (type)
         {
             case InputManager.InputType.Up:
-
                 moveDir = upDir;
                 PlayerTrans.rotation = Quaternion.LookRotation(upDir);
                 StackRoot.rotation = Quaternion.LookRotation(stackDirection);

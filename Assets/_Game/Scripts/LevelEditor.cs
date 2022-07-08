@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
+#if UNITY_EDITOR
 [CustomEditor(typeof(LevelManager))]
 public class LevelEditor : Editor
 {
@@ -24,8 +25,10 @@ public class LevelEditor : Editor
         {
             script.LoadLevel();
         }
-        if(GUILayout.Button("Count Minus Block Left To Build")){
+        if (GUILayout.Button("Count Minus Block Left To Build"))
+        {
             script.CountWideBlockNeedToBuild();
         }
     }
 }
+#endif

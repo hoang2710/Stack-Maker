@@ -11,6 +11,7 @@ public class UIManager : MonoBehaviour
     public GameObject EndGamePanel;
     public TMP_Text GoldText;
     public TMP_Text GoldBonusText;
+    public TMP_Text LevelText;
     public static UIManager Instance { get; private set; }
     private void Awake()
     {
@@ -23,8 +24,6 @@ public class UIManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
-
     }
 
     private void Start()
@@ -40,6 +39,9 @@ public class UIManager : MonoBehaviour
     {
         switch (state)
         {
+            case GameManager.GameState.Loading:
+                LevelText.text = "Lvl " + ((int)LevelManager.Instance.CurLevel).ToString();
+                break;
             case GameManager.GameState.Play:
                 InGamePanel.SetActive(true);
                 EndGamePanel.SetActive(false);

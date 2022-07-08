@@ -19,6 +19,7 @@ public class CornerObject : MonoBehaviour, IPooledObject
 
     public virtual void OnObjectSpawn()
     {
+
         StartCoroutine(DelaySetLockDir());
         StackObject.SetActive(true);
         StackTrans.parent = BlockTrans;
@@ -32,22 +33,27 @@ public class CornerObject : MonoBehaviour, IPooledObject
     public void SetLockDirection()
     {
         RaycastHit hit;
-        Debug.Log("set value  " + BlockTrans.position);
+
+        isUpLock = false;
+        isDownLock = false;
+        isLeftLock = false;
+        isRightLock = false;
+
         if (Physics.Raycast(BlockTrans.position, Vector3.forward, out hit, 1f, ConstValue.WALL_BLOCK_LAYER_MASK))
         {
-            isUpLock = true; Debug.Log("up " + hit.transform.name);
+            isUpLock = true;
         }
         if (Physics.Raycast(BlockTrans.position, Vector3.back, out hit, 1f, ConstValue.WALL_BLOCK_LAYER_MASK))
         {
-            isDownLock = true; Debug.Log("down " + hit.transform.name);
+            isDownLock = true;
         }
         if (Physics.Raycast(BlockTrans.position, Vector3.left, out hit, 1f, ConstValue.WALL_BLOCK_LAYER_MASK))
         {
-            isLeftLock = true; Debug.Log("left " + hit.transform.name);
+            isLeftLock = true;
         }
         if (Physics.Raycast(BlockTrans.position, Vector3.right, out hit, 1f, ConstValue.WALL_BLOCK_LAYER_MASK))
         {
-            isRightLock = true; Debug.Log("right " + hit.transform.name);
+            isRightLock = true;
         }
     }
     private void OnTriggerEnter(Collider other)

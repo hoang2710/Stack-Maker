@@ -5,13 +5,13 @@ using UnityEngine;
 public class CornerObject : MonoBehaviour, IPooledObject
 {
     [SerializeField]
-    private protected bool isUpLock = false;
+    private protected bool isUpLock;
     [SerializeField]
-    private protected bool isDownLock = false;
+    private protected bool isDownLock;
     [SerializeField]
-    private protected bool isLeftLock = false;
+    private protected bool isLeftLock;
     [SerializeField]
-    private protected bool isRightLock = false;
+    private protected bool isRightLock;
     public Transform CornerBlockObject;
     private bool isStackAvailable = true;
     public Transform StackTrans;

@@ -7,21 +7,21 @@ public class InputManager : MonoBehaviour
 {
     private Vector2 mouseDownPos;
     private Vector2 mouseUpPos;
-    private bool isSwipe = false;
+    private bool isSwipe;
     private float swipeDetectTriggerLine = 0.6f;  //cos(45) ~ 1
     [SerializeField]
     private float sensitiveThreshold = 150f;
     [SerializeField]
-    private bool isUpLock = false;
+    private bool isUpLock;
     [SerializeField]
-    private bool isDownLock = false;
+    private bool isDownLock;
     [SerializeField]
-    private bool isLeftLock = false;
+    private bool isLeftLock;
     [SerializeField]
-    private bool isRightLock = false;
+    private bool isRightLock;
     [SerializeField]
-    private bool isInputLock = false;
-    private bool isMove = false;
+    private bool isInputLock;
+    private bool isMove;
 
 
     public static InputManager Instance { get; private set; }

@@ -103,7 +103,7 @@ public class LevelManager : MonoBehaviour
     }
     public void ClearLevel()
     {
-        GameObject[] objs = GameObject.FindGameObjectsWithTag("Tile Block");
+        GameObject[] objs = GameObject.FindGameObjectsWithTag(ConstValue.TAG_TILE_BLOCK);
         foreach (var item in objs)
         {
             item.SetActive(false);

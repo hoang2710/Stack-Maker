@@ -33,10 +33,10 @@ public class CameraManager : MonoBehaviour
         switch (state)
         {
             case GameManager.GameState.Loading:
-                anim.Play("Default Cam");
+                anim.Play(ConstValue.CAMERA_ANIM_DEFAULT_CAM);
                 break;
             case GameManager.GameState.Play:
-                Transform playerTrans = GameObject.FindGameObjectWithTag("Player").transform;
+                Transform playerTrans = GameObject.FindGameObjectWithTag(ConstValue.TAG_PLAYER).transform;
 
                 if (playerTrans != null)
                 {
@@ -48,10 +48,10 @@ public class CameraManager : MonoBehaviour
                 }
                 break;
             case GameManager.GameState.PreEndLevel:
-                anim.Play("Pre End Cam");
+                anim.Play(ConstValue.CAMERA_ANIM_PRE_END_CAM);
                 break;
             case GameManager.GameState.EndLevel:
-                anim.Play("End Cam");
+                anim.Play(ConstValue.CAMERA_ANIM_END_CAM);
                 break;
             default:
                 break;

@@ -14,7 +14,7 @@ public class FinishLine : MonoBehaviour, IPooledObject
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag(ConstValue.TAG_PLAYER))
         {
             InputManager.Instance.UpdateInputLock(true);
             GameManager.Instance.ChangeGameState(GameManager.GameState.PreEndLevel);

@@ -62,7 +62,7 @@ public class CornerObject : MonoBehaviour, IPooledObject
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag(ConstValue.TAG_PLAYER))
         {
             Player player = other.GetComponent<Player>();
 

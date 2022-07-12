@@ -26,7 +26,7 @@ public class Stack : MonoBehaviour, IPooledObject
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag(ConstValue.TAG_PLAYER))
         {
             Col.enabled = false;
             Player player = other.GetComponent<Player>();
